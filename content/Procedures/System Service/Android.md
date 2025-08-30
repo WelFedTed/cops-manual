@@ -2,7 +2,7 @@
 title: Android
 updated:
 tags:
-  - procedure
+  - procedures
   - system-service
   - android
 ---

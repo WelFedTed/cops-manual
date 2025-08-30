@@ -2,6 +2,8 @@
 title: Windows
 updated: 2025-08-30
 tags:
+  - procedures
+  - system-service
   - windows
 ---
 ### Software

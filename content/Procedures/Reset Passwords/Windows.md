@@ -2,24 +2,24 @@
 title: Windows
 updated: 2025-08-30T06:17:00
 tags:
-  - passwords
+  - procedures
+  - reset-passwords
   - windows
-  - exploits
 ---
-### Method 1: Tools
+# Method 1: Tools
 
 <!-- TODO: Flesh out steps -->
   
-#### Medicat
+## Medicat
 
-#### PC Unlocker
+## PC Unlocker
 
-### Method 2: Manual
+# Method 2: Manual
 
 <!-- TODO: Verify + flesh out steps -->
 <!-- REFERENCE: https://4sysops.com/archives/reset-a-windows-10-password/ -->
 
-#### Exploit Utilman.exe
+## Exploit Utilman.exe
 
 - Hold `Shift` key + click `Restart`\
   _Continue to hold shift until the screen goes black_\
@@ -44,7 +44,7 @@ tags:
   - Reboot\
     `wpeutil reboot`
 
-#### Create Temporary Local Admin Account
+## Create Temporary Local Admin Account
 
 - Click the `Utility Manager` icon\
   _Command Prompt should now open instead of the Utility Manager_
@@ -53,7 +53,7 @@ tags:
   `net localgroup administrators temp /add`\
   `exit`
 
-#### Reset User Password
+## Reset User Password
 
 - Sign in to the new `temp` user account\
   _If you don't see the `temp` user account, restart Windows and check again_
@@ -64,7 +64,7 @@ tags:
 - Click `OK`
 - Sign Out
 
-#### Remove Temporary Local Admin Account
+## Remove Temporary Local Admin Account
 
 - Sign in to an admin user account\
   _not the temp user account_
@@ -74,7 +74,7 @@ tags:
 - Click `Yes`
 - Click `OK`
 
-#### Restore Utilman.exe
+## Restore Utilman.exe
 
 - Hold `Shift` key + click `Restart`\
   _Continue to hold shift until the screen goes black_\
