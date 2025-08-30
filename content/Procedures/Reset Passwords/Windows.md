@@ -84,13 +84,14 @@ tags:
 - Click `Command Prompt`
 - Navigate to the System32 directory\
   `cd c:\windows\system32`\
-  _Depending on the number logical volumes the computer has connected at the time, the volume that contains the Windows directory may be mounted to a different drive letter, but it's usually mounted as C:_\
-  <details>
-    <summary>How to find the correct drive letter that contains the Windows directory</summary>
-    If `C:` does not contain the `Windows` directory, then you can repeat the following steps with different letters to locate which drive does:\
-    - Run `D:`
-    - Run `dir`
-    - Check the output of `dir` for both the `Users` and `Windows` directories
-  </details>
-  - Restore Utility Manager\
+  _Depending on the number logical volumes the computer has connected at the time, the volume that contains the Windows directory may be mounted to a different drive letter, but it's usually mounted as C:_
+> [!question]- How to find the correct drive letter that contains the Windows directory
+> If `C:` does not contain the `Windows` directory, then you can repeat the following steps with different letters to locate which drive does:
+>- Run the following commands
+>  ```powershell
+>  D:
+>  dir
+>  ```
+>- Check the output of `dir` for both the `Users` and `Windows` directories
+- Restore Utility Manager\
     `copy utilman.exe.bak utilman.exe`

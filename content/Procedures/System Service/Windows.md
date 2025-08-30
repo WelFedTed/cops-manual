@@ -6,7 +6,7 @@ tags:
   - system-service
   - windows
 ---
-### Software
+# Software
 
 - **Restart Windows**\
   _Force Restart Windows now to provide a clean environment befor proceeding_\
@@ -94,7 +94,7 @@ tags:
   - Create a new System Restore point\
     `COPS - Post System Service`
 
-### Hardware
+# Hardware
 
 - Check all buttons and ports are free from debris and working functioning correctly
 - Air compress out system as required
