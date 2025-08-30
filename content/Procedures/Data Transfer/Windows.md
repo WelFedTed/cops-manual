@@ -168,7 +168,9 @@ tags:
  >[!info]- How to switch out of S Mode
  >>[!warning] WARNING: Switching out of S Mode is a permanent change and can <u>NOT</u> be reverted
  > - Connect to the internet
- > -  Run `ms-windows-store://pdp/?productid=BF712690PMLF&OCID=windowssmodesupportpage`
+ > -  Open a terminal as Administrator\
+ >   or\
+ >   Run `ms-windows-store://pdp/?productid=BF712690PMLF&OCID=windowssmodesupportpage`
  > - Follow the prompts to Switch Out of S Mode\
  >   *this will change the Windows edition installed to Windows 10/11 Home or Pro as per it's installed license*
 - **Configure System Restore**\
@@ -204,7 +206,7 @@ tags:
   - Open a Terminal\
     `wt` or `powershell` or `cmd`
   - Run the following commands:
-    ```powershell
+    ```batch
     winget source update
     winget upgrade --all --silent
     ```
@@ -221,6 +223,10 @@ tags:
   - Click `Install`
 - **[ <font style="color:ORANGE">OPTIONAL</font> ] Update Outdated Drivers**
 - **Verify Drivers**
+>[!info]- How Verifier works
+>- Windows Verifier works by stressing out drivers as they're loaded (it is expected that the computer's performance will be impacted while verifier is enabled)
+>- If Windows loads into the desktop OK and does not crash with Verifier enabled, then all is good and you can proceed to turn it off
+>- If Verifier induces a crash, Windows should produce a Blue Screen of Death (BSOD) with a STOP Code error and information on the driver that crashed, you can use this information to identify the faulty driver that caused the crash and replace it
   - **Turn On Windows Verifier:**
     - Run `verifier`
     - Select `Create standard settings`
@@ -228,9 +234,6 @@ tags:
     - Select `Automatically select all drivers on this computer`
     - Click `Finish`
     - Restart Windows `shutdown -r -f -t 00`
-      - _Windows Verifier works by stressing out drivers as they're loaded (it is expected that the computer's performance will be impacted while verifier is enabled)_\
-      - _If Windows loads into the desktop OK and does not crash with Verifier enabled, then all is good and you can proceed to turn it off_\
-      - _If Verifier induces a crash, Windows should produce a Blue Screen of Death (BSOD) with a STOP Code error and information on the driver that crashed, you can use this information to identify the faulty driver that caused the crash and replace it_
   - **Turn Off Windows Verifier:**
     - Run `verifier`
     - Select `Delete existing settings`
@@ -268,7 +271,7 @@ tags:
   - Open a Terminal as Administrator\
     `wt` or `powershell` or `cmd`
   - Run the following commands:
-    ```powershell
+    ```batch
     winget source reset --force
     winget source update
     winget upgrade --all --silent

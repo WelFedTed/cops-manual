@@ -7,11 +7,11 @@ tags:
 %% TODO: verify steps and incorporate these entries into main doc %%
 ## How to Hard Refresh Web Browsers
 
-<!-- Reference: https://help.gavel.io/articles/how-to-do-a-hard-refresh-in-any-browser -->
+%% Reference: https://help.gavel.io/articles/how-to-do-a-hard-refresh-in-any-browser %%
 
-A hard refresh clears your browser cache for a specific page, which forces it to load the most recent version of that page. This could include new scripts, styles or features.
-
-Important: Clicking the "Refresh" arrow on your browser address bar is not a hard refresh. Here's how you can clear your cache through a hard refresh on any browser:
+>[!info]- What is a Hard Refresh?
+>A hard refresh clears your browser cache for a specific page, which forces it to load the most recent version of that page. This could include new scripts, styles or features.
+>>[!important] Important: Clicking the "Refresh" button on your browser address bar is not a hard refresh, and will simply reload the already cached version of the page.
 
 - Google Chrome\
   Windows: `Ctrl and then press F5`\
@@ -30,10 +30,12 @@ Important: Clicking the "Refresh" arrow on your browser address bar is not a har
 <!-- TODO: also make this a script on USB tool 'Clear-Print-Queue.bat' -->
 
 - Open a terminal as Administrator
-- Run the following commands:\
-  `net stop spooler`\
-  `del %SYSTEMROOT%\System32\spool\PRINTERS\* /Q`\
-  `net start spooler`
+- Run the following commands:
+  ```batch
+	net stop spooler
+	del %SYSTEMROOT%\System32\spool\PRINTERS\* /Q
+	net start spooler
+	```
 
 ## How to Generate Battery Report (Windows)
 
@@ -148,3 +150,36 @@ or\
 - Close + Re-open the terminal\
   _winget should now be working again_
 - Run `winget -v` to test
+
+# Script: Network Status Logger
+
+Use this script to log network / internet connection status over time.\
+*(i.e. customer reports Wi-Fi dropping out occasionally)*
+
+```batch
+rem save with filename net-check.bat
+
+@echo off
+
+title Network Status Logger
+
+set "log_file=net-check.log"
+set "line=--------------------------------------------------"
+
+:loop
+
+echo %DATE% %TIME% >> %log_file%
+echo %line% >> %log_file%
+echo: >> %log_file%
+
+echo Pinging google.com...
+echo:
+ping google.com >> %log_file%
+echo: >> %log_file%
+
+timeout 30
+echo:
+
+goto :loop
+```
+

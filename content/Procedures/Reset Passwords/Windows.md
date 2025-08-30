@@ -88,7 +88,7 @@ tags:
 > [!question]- How to find the correct drive letter that contains the Windows directory
 > If `C:` does not contain the `Windows` directory, then you can repeat the following steps with different letters to locate which drive does:
 >- Run the following commands
->  ```powershell
+>  ```batch
 >  D:
 >  dir
 >  ```

@@ -65,7 +65,7 @@ tags:
   - Open a Terminal as Administrator\
     Run `wt` or `powershell` or `cmd`
   - Run the following commands:
-    ```powershell
+    ```batch
     winget source reset --force
     winget source update
     winget upgrade --all --silent

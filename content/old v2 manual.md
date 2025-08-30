@@ -132,16 +132,18 @@
 - **System Maintenance/Repair**\
   - Open a Terminal as Administrator\
     Run `wt` or `powershell` or `cmd`
-  - Run the following commands:\
-    `winget source reset --force`\
-    `winget source update`\
-    `winget upgrade --all --silent`\
-    `sfc /scannow`\
-    `dism /online /cleanup-image /startcomponentcleanup /resetbase`\
-    `dism /online /cleanup-image /restorehealth`\
-    `sfc /scannow`\
-    `defrag /c /o`\
-    `chkdsk c: /r /scan /perf`\
+  - Run the following commands:
+    ```batch
+    winget source reset --force
+    winget source update
+    winget upgrade --all --silent
+    sfc /scannow
+    dism /online /cleanup-image /startcomponentcleanup /resetbase
+    dism /online /cleanup-image /restorehealth
+    sfc /scannow
+    defrag /o /c
+    chkdsk c: /r /scan /perf
+    ```
     <details>
       <summary>Useful Tip</summary>
       You can queue up multiple commands in PowerShell by pressing `Shift+Enter` to add a new line before pressing `Enter` to execute the all of the queued up commands one after another
