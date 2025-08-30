@@ -8,21 +8,21 @@ tags:
 ---
 # Method 1: Tools
 
-<!-- TODO: Flesh out steps -->
-  
+%% TODO: Flesh out  steps  %%
+    
 ## Medicat
 
 ## PC Unlocker
 
 # Method 2: Manual
 
-<!-- TODO: Verify + flesh out steps -->
-<!-- REFERENCE: https://4sysops.com/archives/reset-a-windows-10-password/ -->
+%% TODO: Verify + flesh out  steps %%
+%% REFERENCE: https://4sysops.com/archives/reset-a-windows-10-password/ %%
 
 ## Exploit Utilman.exe
 
 - Hold `Shift` key + click `Restart`\
-  _Continue to hold shift until the screen goes black_\
+  *Continue to hold shift until the screen goes black*\
   Windows should reboot in to the `Recovery Environment`
 - Click `Troubleshoot`
 - Click `Advanced`
