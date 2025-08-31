@@ -1,6 +1,6 @@
 ---
 title: Windows
-updated: 2025-08-30
+updated: 2025-09-01
 tags:
   - procedures
   - system-service
@@ -10,7 +10,7 @@ tags:
 
 - **Restart Windows**\
   _Force Restart Windows now to provide a clean environment befor proceeding_\
-  `shutdown -r -f -t 00`
+  `shutdown /r /f /t 00`
 
 - **System Restore**\
   - Check System Restore configuration\

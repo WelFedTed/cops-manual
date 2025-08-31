@@ -1,6 +1,6 @@
 ---
 title: Windows
-updated: 2025-08-31
+updated: 2025-09-01
 tags:
   - procedures
   - data-transfer
@@ -12,7 +12,7 @@ tags:
 
   - Restart Windows\
     _Force Restart Windows now to provide a clean environment befor proceeding_\
-    `shutdown -r -f -t 00`
+    `shutdown /r /f /t 00`
   - [ <font style="color:ORANGE">OPTIONAL</font> ] Create a new System Restore point
 
 ## Antivirus
