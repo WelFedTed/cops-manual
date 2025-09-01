@@ -1,10 +1,12 @@
 ---
-title: Windows
+title: System Service
 updated: 2025-09-01
 tags:
   - procedures
-  - system-service
   - windows
+  - system
+  - service
+  - clean
 ---
 # Software
 

@@ -1,10 +1,13 @@
 ---
-title: Windows
+title: Data Transfer
 updated: 2025-09-01
 tags:
   - procedures
-  - data-transfer
   - windows
+  - data
+  - transfer
+  - backup
+  - restore
 ---
 # Backup
 

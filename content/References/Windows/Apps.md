@@ -1,10 +1,14 @@
 ---
-title: Windows
+title: Apps
 updated: 2025-08-31
 tags:
   - references
-  - apps
   - windows
+  - apps
+  - programs
+  - applications
+  - cheat
+  - sheet
 ---
 
 | %% leave blank %%                                                                                                                                | %% leave blank %%                                                                                                                                                               |

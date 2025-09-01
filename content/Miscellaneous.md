@@ -1,6 +1,6 @@
 ---
 title: Miscellaneous
-updated: 2025-08-31
+updated: 2025-09-02
 tags:
   - miscellaneous
 ---
@@ -51,9 +51,13 @@ tags:
 >[!info]-What is a Page File?
 > A page file (also known as a "paging file") is an optional, hidden system file on a hard disk.
 > Page files enable the system to remove infrequently accessed modified data from physical memory to let the system use physical memory more efficiently for more frequently accessed data.\
-> Page files extend how much `Committed Memory` (also known as "virtual memory") is used to store modified data.\
-> This can be checked in `Task Manager` > `Performance` > `Memory` > `Committed`</br>
-  <em>This comitted memory value should represent Total Physical Memory + Page File size</em>
+> Page files extend how much `Committed Memory` (also known as "virtual memory") is used to store modified data.
+> > [!tip] How to check Committed Memory
+> > - Open `Task Manager`
+> > - Click `Performance`
+> > - Click `Memory`
+> > - Read the `Commited` value\
+> >   <em>This comitted memory value should represent Total Physical Memory + Page File size</em>
 ### Method 1: Registry
 
 - Run `regedit` as Administrator (Shift + Enter)

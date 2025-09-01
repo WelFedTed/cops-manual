@@ -1,10 +1,14 @@
 ---
-title: macOS
+title: Apps
 updated: 2025-08-31
 tags:
   - references
-  - apps
   - macos
+  - apps
+  - programs
+  - applications
+  - cheat
+  - sheet
 ---
 
 | %% leave blank %%                                                                      | %% leave blank %%                                                                                                                                                                             |

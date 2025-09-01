@@ -1,10 +1,14 @@
 ---
-title: Windows
+title: Reset Passwords
 updated: 2025-08-30T06:17:00
 tags:
   - procedures
-  - reset-passwords
   - windows
+  - reset
+  - passwords
+  - account
+  - user
+  - login
 ---
 # Method 1: Tools
 
