@@ -1,6 +1,6 @@
 ---
 title: Websites
-updated: 2025-09-03
+updated: 2025-09-05
 tags:
   - references
   - websites
@@ -64,6 +64,7 @@ tags:
 
 # Scripting / Coding
 
-|    |     |
-|:-- | :-- |
-| [SS64.com](https://ss64.com/) | Quick reference from terminal shell commands, particularly helpful for CMD / Batch commands |
+|                                                               |                                                                                             |
+| :------------------------------------------------------------ | :------------------------------------------------------------------------------------------ |
+| [SS64.com](https://ss64.com/)                                 | Quick reference from terminal shell commands, particularly helpful for CMD / Batch commands |
+| [ascii-tree-generator.com](https://ascii-tree-generator.com/) | Quickly create plain text representations of file/folder tree structures                    |

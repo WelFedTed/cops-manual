@@ -1,6 +1,6 @@
 ---
 title: Data Transfer
-updated: 2025-09-01
+updated: 2025-09-05
 tags:
   - procedures
   - windows
@@ -15,7 +15,6 @@ tags:
 
   - Restart Windows\
     _Force Restart Windows now to provide a clean environment befor proceeding_\
-    `shutdown /r /f /t 00`
   - [ <font style="color:ORANGE">OPTIONAL</font> ] Create a new System Restore point
 
 ## Antivirus
@@ -25,11 +24,37 @@ tags:
 
 ## Transfer Drive
 
-  - Create a Job folder on the Transfer Drive
+- Create a Job folder on the Transfer Drive
     _naming convention:_\
     `Job#5000`
-    - _Create a new folder with the current job number to save User Data to_
+- [ <font style="color:ORANGE">OPTIONAL</font> ] Create a .txt file with the customer's name for quick identification when browsing job folders\
+  *naming convention:*\
+  `John Smith.txt`
+- Create a dated Data Transfer folder inside of the Job folder\
+  This is the folder where all exported user data will be saved for the data transfer\
+  *naming convention:*\
+  `Data-Transfer_2025-01-21`\
+  *(append the date to this folder name, so we don't need to date each file individually, but should you add/edit export files inside this folder at a later date then append the date to those filenames)*
+> [!example]- Example: Starting Export File Structure
+> The starting file/folder structure should look similar to this example:
+> ```
+> /
+> ├─ Job#5000/
+> │  ├─ John Smith.txt
+> │  ├─ Data-Transfer_2025-01-21/
+> │  │  ├─ User Data Goes Here
+> ```
 
+> [!tip]- Note on filenames
+> Many software tools (particularly CLI tools) don't interperet `spaces` in filenames correctly and this can cause issues when saving or loading files.\
+> For this reason, it is recommended to save files without `spaces` or 'white space' in file and folder names, and to instead use hyphens and/or underscores.\
+> e.g. using `web-browser_google-chrome_passwords.csv`\
+> instead of `Web Browser - Google Chrome - Passwords.csv`\
+> (and using all lowercase characters is just easier/quicker to type)\
+> \
+> If you do have `spaces` or other 'white space' in your filenames, then you will need to wrap the filenames in quotes when using CLI tools.\
+> i.e. `winget export -o "My Winget Export.json"`\
+> vs. `winget export -o my-winget-export.json`
 ## User Profiles
 
   - _Copy `C:\Users\` folder to the Job folder on the Transfer Drive_
@@ -40,9 +65,9 @@ tags:
 
   - **Export Bookmarks**\
     _naming convention:_\
-    `Web Browser - Google Chrome - Bookmarks - 2024-07-15.html`\
+    `web-browser_google-chrome_bookmarks.html`\
     or\
-    `web-browser_google-chrome_bookmarks_2024-07-15.html`
+    `Web Browser - Google Chrome - Bookmarks.html`
     - Google Chrome URL: `chrome://bookmarks`\
     - Microsoft Edge URL: `edge://favorites`\
     - AVG Secure Browser URL: `secure://bookmarks`\
@@ -51,28 +76,34 @@ tags:
 
   - **Export Passwords**\
     _naming convention:_\
-    `Web Browser - Google Chrome - Passwords - 2024-07-15.csv`\
+    `web-browser_google-chrome_passwords.csv`\
     or\
-    `web-browser_google-chrome_passwords-2024-07-15.csv`
+    `Web Browser - Google Chrome - Passwords.csv`\
     - Google Chrome URL: `chrome://password-manager` or `chrome://settings/passwords` (older Chrome versions)\
     - Microsoft Edge URL: `edge://wallet/passwords` or `edge://settings/passwords` (older Edge versions)\
     - AVG Secure Browser URL: `secure://password-manager` or `secure://settings/passwords` (older Secure Browser versions)\
     - Mozilla Firefox URL: `about:logins`\
+      *(Firefox may require multiple updates before the Export Passwords button is available)*
     - Microsoft Internet Explorer: use [Nirsoft IE PassView](https://www.nirsoft.net/utils/internet_explorer_password.html)
 
   - **Sync Accounts**\
     _Try to sync each browser with their relevant accounts if available_\
-    _Manual exports of Bookmarks + Passwords is good, but syncing the entire browser is better_
+    _Manual exports of Bookmarks + Passwords is good, but syncing the entire browser is better_\
+    _naming convention:_\
+    `web-browser_google-chrome_sync.txt`\
+    or\
+    `Web Browser - Google Chrome - Sync.txt`\
+    Save the sync account email address in this file and wether sync is enabled or note, and save "no account signed in" if there is no account signed in to the web browser.
     - Google Chrome: `Google Account`
       - `chrome://sync-internals`\
-      - Check Enabled: `Sync Feature Enabled`	= true\
+      - Check Enabled: `Sync Feature Enabled` = true\
       - Check Account: `Username`\
       - Checked Synced: `Last Synced` = Just now\
       - Check Not Actively Syncing: `Sync Cycle Ongoing` = false\
       - Force Sync (if required): `chrome://extensions` - enable `Developer mode` - click `Update`\
     - Microsoft Edge: `Microsoft Account`
       - `edge://sync-internals`\
-      - Check Enabled: `Sync Feature Enabled`	= true\
+      - Check Enabled: `Sync Feature Enabled` = true\
       - Check Account: `Username`\
       - Checked Synced: `Last Synced` = Just now\
       - Check Not Actively Syncing: `Sync Cycle Ongoing` = false\
@@ -84,27 +115,27 @@ tags:
 
 ## Programs
 
-  - **Export Installed Programs List**\
+- **Export Installed Programs List**\
     _naming convention:_\
-    `Installed Programs - Nirsoft Uninstallview - 2024-07-15.html`\
+    `installed-programs_nirsoft-uninstallview.html`\
     or\
-    `installed-programs_nirsoft-uninstallview_2024-07-15.html`
-    - Use `Nirsoft UninstallView`, save all as `Horizontal HTML`
+    `Installed Programs - Nirsoft Uninstallview.html`
+	- Use `Nirsoft UninstallView` and `Nirsoft InstalledPackagesView`, save all as `Horizontal HTML`
 
-  - **Export Winget**\
+- **Export Winget**\
     _naming convention:_\
-    `Winget - Export - 2024-07-15.json`\
-    or\
-    `winget_export_2024-07-15.json`
+    `winget.json`
     - Open a Terminal as Administrator\
       Run `wt` or `powershell` or `cmd`
-    - Check Winget is installed `winget -v` (this will throw an error if winget is unavailable)\
+    - Change in to Data Transfer folder\
+      `cd d:\Job#5000\Data-Transfer_2025-01-21\`
+    - Check Winget is installed\
+      `winget -v` (this will throw an error if winget is unavailable)
     - Update Winget `winget source update`
-    - Export Winget's list of installed programs `winget export -o "REPLACE-WITH-TARGET-FILE"`\
-    _(update REPLACE-WITH-TARGET-FILE with the target winget export file on the transfer drive)_\
-    - Optionally export a list of all programs that Winget does cannot re-install at the same time with this extended command\
-      `winget export -o "REPLACE-WITH-TARGET-FILE" > "winget_unnavailable.txt"`
-
+    - Export Winget's list of installed programs\
+      `winget export -o winget.json`\
+    - [ <font style="color:ORANGE">OPTIONAL</font> ] Export a list of all programs that Winget cannot re-install at the same time with this extended command\
+      `winget export -o winget.json > winget_unavailable.txt`
   - [ <font style="color:ORANGE">ALTERNATIVE</font> ] Create Winget Install Script using 3rd party site\
     [winstall.app](https://winstall.app/)\
     [winget.run](https://winget.run/)
@@ -112,9 +143,9 @@ tags:
 ## Licenses
 
   _naming convention:_\
-  `License Keys - Nirsoft Product Key Scanner - 2024-07-15.html`\
+  `license-keys_nirsoft-product-key-scanner.html`\
   or\
-  `license-keys_nirsoft-product-key-scanner_2024-07-15.html`
+  `License Keys - Nirsoft Product Key Scanner.html`
   - _use Nirsoft Product Key Scanner or Nirsoft ProduKey, save all as Horizontal HTML_
 
 ## Emails / Calendars / Contacts
@@ -132,9 +163,7 @@ tags:
 
 - Export Drivers\
   _naming convention:_\
-  `TRANSFERDRIVE:\\Job#5000\Drivers - 2024-07-15\`\
-  or\
-  `TRANSFERDRIVER:\\Job#5000\drivers_2024-07-15\`
+  `TRANSFERDRIVE:\\Job#5000\drivers\`
 - Open `PowerShell` as an Administrator and run the following script:\
   `Export-WindowsDriver -Online -Destination "REPLACE-WITH-TARGET-FOLDER"`\
   _update REPLACE-WITH-TARGET-FOLDER with the target drivers folder on the transfer drive_
@@ -143,6 +172,81 @@ tags:
 
 - Check C: Drive for unusual files/folders to transfer\
   _copy to Job folder copying the C: Drive file structure (TransferDrive:\\Job\#5000\\C\\FolderToSave)_
+- Repeat this process for any additional drive letters the device may have installed
+> [!example]- Example: Final Export File Structure
+> This is what the final export file/folder structure should look like:
+> ```
+> /
+> ├─ Job#5000/
+> │  ├─ Data-Transfer_2025-01-21/
+> │  │  ├─ c/
+> │  │  │  ├─ data
+> │  │  ├─ dlls/
+> │  │  ├─ drivers/
+> │  │  │  ├─ exports
+> │  │  ├─ fonts/
+> │  │  ├─ printers/
+> │  │  │  ├─ installers
+> │  │  ├─ Users/
+> │  │  ├─ web-browsers/
+> │  │  │  ├─ google-chrome/
+> │  │  │  │  ├─ extensions/
+> │  │  │  │  ├─ profile/
+> │  │  │  ├─ microsoft-edge/
+> │  │  │  │  ├─ extensions/
+> │  │  │  │  ├─ profile/
+> │  │  │  ├─ mozilla-firefox/
+> │  │  │  │  ├─ extensions/
+> │  │  │  │  ├─ profile/
+> │  │  ├─ bluetooth-devices.txt
+> │  │  ├─ default-apps.txt
+> │  │  ├─ desktop_screenshot.png
+> │  │  ├─ desktop_wallpaper.jpg
+> │  │  ├─ dlls_nirsoft-regdllview.html
+> │  │  ├─ drives_nirsoft-driveletterview.html
+> │  │  ├─ email-client_nirsoft-mail-passview.html
+> │  │  ├─ email-client_nirsoft-pstpassword.html
+> │  │  ├─ email-client_nirsoft-winmailpassrec.html
+> │  │  ├─ installed-programs_nirsoft-installedpackagesview.html
+> │  │  ├─ installed-programs_nirsoft-uninstallview.html
+> │  │  ├─ license-keys_nirsoft-product-key-scanner.html
+> │  │  ├─ license-keys_nirsoft-produkey.html
+> │  │  ├─ netword-shares.txt
+> │  │  ├─ network-credentials_nirsoft-network-password-recovery.html
+> │  │  ├─ network-interfaces_nirsoft-networkinterfacesview.html
+> │  │  ├─ office.txt
+> │  │  ├─ outlook_export_archive.pst
+> │  │  ├─ outlook_export_calendar.pst
+> │  │  ├─ outlook_export_contacts.csv
+> │  │  ├─ outlook_export_john@example.com.pst
+> │  │  ├─ outlook_export_profile.reg
+> │  │  ├─ passwords_nirsoft-lostmypassword.html
+> │  │  ├─ printers.txt
+> │  │  ├─ registry.reg
+> │  │  ├─ remote-desktop_nirsoft-remote-desktop-passview.html
+> │  │  ├─ remote-desktop_nirsoft-vncpassview.html
+> │  │  ├─ security-software_nirsoft-securitysoftview.html
+> │  │  ├─ startup-items_nirsoft-whatinstartup.html
+> │  │  ├─ symlinks_nirsoft-ntfslinksview.html
+> │  │  ├─ trend-micro.txt
+> │  │  ├─ web-browser_addons_nirsoft-browseraddonsview.html
+> │  │  ├─ web-browser_google-chrome_bookmarks.html
+> │  │  ├─ web-browser_google-chrome_passwords.csv
+> │  │  ├─ web-browser_google-chrome_sync.txt
+> │  │  ├─ web-browser_microsoft-edge_bookmarks.html
+> │  │  ├─ web-browser_microsoft-edge_passwords.csv
+> │  │  ├─ web-browser_micrsoft-edge_sync.txt
+> │  │  ├─ web-browser_mozilla-firefox_bookmarks.html
+> │  │  ├─ web-browser_mozilla-firefox_passwords.csv
+> │  │  ├─ web-browser_mozilla-firefox_sync.txt
+> │  │  ├─ windows.txt
+> │  │  ├─ winget.json
+> │  │  ├─ winget_unavailable.txt
+> │  │  ├─ wireless-networks_nirsoft-wirelesskeyview.html
+> │  ├─ John Smith.txt
+> ```
+> This should now be a comprehensive export of the old source device.\
+> You may not import *all* of these exports on to the new target device, but you should have everything you *might* need to reference during the restoration process.
 
 # Prepare New Device _(if required)_
 
