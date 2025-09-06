@@ -1,6 +1,6 @@
 ---
 title: Backup/Exports
-updated: 2025-09-02
+updated: 2025-09-07
 tags:
   - procedures
   - backup
@@ -58,7 +58,7 @@ tags:
 %% TODO: check this is accurate %%
 
 - Submit `Apple Privacy Data Request`
-  - Sign in [Apple's Data and Privacy page](https://privacy.apple.com/) with the customer's `Apple Account`
+  - Sign in to [Apple's Data and Privacy page](https://privacy.apple.com/) with the customer's `Apple Account`
   - Click `Request a copy of your data`
   - Tick `iCloud Photos`
   - Click `Continue`

@@ -1,6 +1,6 @@
 ---
 title: Miscellaneous
-updated: 2025-09-02
+updated: 2025-09-07
 tags:
   - miscellaneous
 ---
@@ -27,7 +27,7 @@ tags:
 
 ## How to Manually Clear the Print Queue (Windows)
 
-<!-- TODO: also make this a script on USB tool 'Clear-Print-Queue.bat' -->
+%% TODO: also make this a script on USB tool 'Clear-Print-Queue.bat' %%
 
 - Open a terminal as Administrator
 - Run the following commands:
@@ -47,7 +47,8 @@ tags:
 
 ## How to Reset Page File (pagefile.sys) (Windows)
 
-<!-- Reference: https://www.thewindowsclub.com/how-to-reset-virtual-memory-or-page-file-in-windows -->
+%% Reference: https://www.thewindowsclub.com/how-to-reset-virtual-memory-or-page-file-in-windows %%
+
 >[!info]-What is a Page File?
 > A page file (also known as a "paging file") is an optional, hidden system file on a hard disk.
 > Page files enable the system to remove infrequently accessed modified data from physical memory to let the system use physical memory more efficiently for more frequently accessed data.\
@@ -123,14 +124,11 @@ tags:
 
 ## How to Reset Hibernation File (hiberfil.sys) (Windows)
 
-<!-- Reference: https://learn.microsoft.com/en-us/troubleshoot/windows-client/setup-upgrade-and-drivers/disable-and-re-enable-hibernation -->
+%% Reference: https://learn.microsoft.com/en-us/troubleshoot/windows-client/setup-upgrade-and-drivers/disable-and-re-enable-hibernation %%
 
 Windows uses the hiberfil.sys file to store a copy of the system memory on the hard disk when the hybrid sleep setting is turned on. If this file is not present, the computer cannot hibernate.
-<details>
-  <summary>More Info</summary>
-  The hiberfil.sys hidden system file is located in the root folder of the drive where the operating system is installed. The Windows Kernel Power Manager reserves this file when you install Windows. The size of this file is approximately equal to how much random access memory (RAM) is installed on the computer.
-</details>
-
+> [!info]- More Info
+> The hiberfil.sys hidden system file is located in the root folder of the drive where the operating system is installed. The Windows Kernel Power Manager reserves this file when you install Windows. The size of this file is approximately equal to how much random access memory (RAM) is installed on the computer.
 ### Disable Hibernation
 
 `powercfg -h off`\
@@ -145,7 +143,7 @@ or\
 
 ## How to Install / Repair Winget
 
-<!-- Reference: https://github.com/asheroto/winget-install -->
+%% Reference: https://github.com/asheroto/winget-install  %%
 
 - Connect to the internet
 - Open a terminal as Administrator
