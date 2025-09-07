@@ -1,6 +1,6 @@
 ---
 title: Data Transfer
-updated: 2025-09-07
+updated: 2025-09-08
 tags:
   - procedures
   - windows
@@ -93,7 +93,7 @@ tags:
     `web-browser_google-chrome_sync.txt`\
     or\
     `Web Browser - Google Chrome - Sync.txt`\
-    Save the sync account email address in this file and wether sync is enabled or note, and save "no account signed in" if there is no account signed in to the web browser.
+    Save the sync account email address in this file and whether sync is enabled or note, and save "no account signed in" if there is no account signed in to the web browser.
     - Google Chrome: `Google Account`
       - `chrome://sync-internals`\
       - Check Enabled: `Sync Feature Enabled` = true\
