@@ -19,20 +19,21 @@ tags:
 
 # Hardware
 
-|    |     |
-|:-- | :-- |
-| [iFixIt - Electronics Skills](https://www.ifixit.com/Device/Electronics_Skills) | Learn general device repair and electronics skills |
-| [iFixIt - Repair Guides](https://www.ifixit.com/Guide) | Repository of repair guides for specific devices |
-| [Repair Wiki](https://repair.wiki/) | Guides for troubleshooting more specific or niche device issues |
-| [Keyboard Checker](https://keyboardchecker.com/) | Keyboard tester |
-| [HardwareTester - Midi Tester](https://hardwaretester.com/midi) | Test MIDI input devices |
-| [HardwareTester - Gamepad Tester](https://hardwaretester.com/gamepad) | Test Gamepads / Controllers |
-| [HardwareTester - Microphone Tester](https://hardwaretester.com/microphone) | Test Microphones |
-| [PassMark - CPU Benchmarks](https://www.cpubenchmark.net/) | Compare CPU's |
-| [PassMark - Videocard Benchmarks](https://www.videocardbenchmark.net/) | Compare Videocards |
-| [PassMark - Memory Benchmarks](https://www.memorybenchmark.net/) | Compare Memory Modules |
-| [PassMark - Hard Drive Benchmarks](https://www.harddrivebenchmark.net/) | Compare HDD's / SSD's |
-| [AirPrint](https://support.apple.com/en-us/HT201311) | List of Printers that support AirPrint |
+|                                                                                 |                                                                 |
+| :------------------------------------------------------------------------------ | :-------------------------------------------------------------- |
+| [Apple Documentation](https://support.apple.com/en-us/docs)                     | Apple's Repair Manuals and Specifications for their devices     |
+| [iFixIt - Electronics Skills](https://www.ifixit.com/Device/Electronics_Skills) | Learn general device repair and electronics skills              |
+| [iFixIt - Repair Guides](https://www.ifixit.com/Guide)                          | Repository of repair guides for specific devices                |
+| [Repair Wiki](https://repair.wiki/)                                             | Guides for troubleshooting more specific or niche device issues |
+| [Keyboard Checker](https://keyboardchecker.com/)                                | Keyboard tester                                                 |
+| [HardwareTester - Midi Tester](https://hardwaretester.com/midi)                 | Test MIDI input devices                                         |
+| [HardwareTester - Gamepad Tester](https://hardwaretester.com/gamepad)           | Test Gamepads / Controllers                                     |
+| [HardwareTester - Microphone Tester](https://hardwaretester.com/microphone)     | Test Microphones                                                |
+| [PassMark - CPU Benchmarks](https://www.cpubenchmark.net/)                      | Compare CPU's                                                   |
+| [PassMark - Videocard Benchmarks](https://www.videocardbenchmark.net/)          | Compare Videocards                                              |
+| [PassMark - Memory Benchmarks](https://www.memorybenchmark.net/)                | Compare Memory Modules                                          |
+| [PassMark - Hard Drive Benchmarks](https://www.harddrivebenchmark.net/)         | Compare HDD's / SSD's                                           |
+| [AirPrint](https://support.apple.com/en-us/HT201311)                            | List of Printers that support AirPrint                          |
 
 # Networking
 
