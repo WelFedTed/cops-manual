@@ -14,17 +14,17 @@ tags:
 
 |                       |                                                                                                                                 |
 | --------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| `Win+R`               | Open `Run` dialogue box                                                                                                         |
-| `Win+E`               | Open `Explorer`                                                                                                                 |
-| `Win+D`               | Minimize all windows (Show Desktop)                                                                                             |
+| `Ctrl+Alt+Del`        | Switch to the `Security Screen` where you can lock the desktop, switch user, sign out, change a password, or open Task Manager. |
 | `Ctrl+Shift+ESC`      | Open `Task Manager`                                                                                                             |
+| `Ctrl+Shift+Win+B`    | Reset display driver                                                                                                            |
+| `Win+.`               | Open Emoji panel                                                                                                                |
+| `Win+D`               | Minimize all windows (Show Desktop)                                                                                             |
+| `Win+E`               | Open `Explorer`                                                                                                                 |
+| `Win+G`               | Open `Game Bar` overlay                                                                                                         |
+| `Win+R`               | Open `Run` dialogue box                                                                                                         |
+| `Win+Shift+R`         | Open `Snipping Tool` to record screen                                                                                           |
+| `Win+Shift+S`         | Open `Snipping Tool` to take screenshot                                                                                         |
 | `Win+X`               | Open `Quick Link` menu                                                                                                          |
 | `Win+X` -> `A`        | Open default terminal as Administrator                                                                                          |
-| `Win+X` -> `U` -> `U` | `Shut Down`                                                                                                                     |
 | `Win+X` -> `U` -> `R` | `Restart`                                                                                                                       |
-| `Win+.`               | Open Emoji panel                                                                                                                |
-| `Win+G`               | Open `Game Bar` overlay                                                                                                         |
-| `Ctrl+Shift+Win+B`    | Reset display driver                                                                                                            |
-| `Win+Shift+S`         | Open `Snipping Tool` to take screenshot                                                                                         |
-| `Win+Shift+R`         | Open `Snipping Tool` to record screen                                                                                           |
-| `Ctrl+Alt+Del`        | Switch to the `Security Screen` where you can lock the desktop, switch user, sign out, change a password, or open Task Manager. |
+| `Win+X` -> `U` -> `U` | `Shut Down`                                                                                                                     |
