@@ -1,6 +1,6 @@
 ---
 title: Data Transfer
-updated: 2025-09-08
+updated:
 tags:
   - procedures
   - windows
@@ -16,11 +16,6 @@ tags:
   - Restart Windows\
     _Force Restart Windows now to provide a clean environment befor proceeding_\
   - [ <font style="color:ORANGE">OPTIONAL</font> ] Create a new System Restore point
-
-## Antivirus
-
-  - Disable the Antivirus\
-    _Some of our extraction tools prompt false positives in the majority of security software_
 
 ## Transfer Drive
 
@@ -55,109 +50,180 @@ tags:
 > If you do have `spaces` or other 'white space' in your filenames, then you will need to wrap the filenames in quotes when using CLI tools.\
 > i.e. `winget export -o "My Winget Export.json"`\
 > vs. `winget export -o my-winget-export.json`
+
 ## User Profiles
 
   - _Copy `C:\Users\` folder to the Job folder on the Transfer Drive_
 
+## Security
+
+- Create a new text document for noting their security software details
+  *file name:*\
+  `security.txt`
+- Add the name of the security software
+- Add if the software is PAID or FREE
+- Add the add the username/email of the account signed in to the software *( if available )*
+- Add the serial number / license key used to activate the software *( if available )*
+- Disable the Antivirus\
+  *Some of our extraction tools prompt false positives in the majority of security software*
+
 ## Web Browsers
+Complete the following exports for each installed web browser
+### Bookmarks
+*naming convention:*\
+`web-browser_google-chrome_bookmarks.html`
+- Google Chrome URL: `chrome://bookmarks`\
+- Microsoft Edge URL: `edge://favorites`\
+- AVG Secure Browser URL: `secure://bookmarks`\
+- Mozilla Firefox Hotkey: `Ctrl+Shift+O`\
+- Microsoft Internet Explorer: `%USERPROFILE%\Favorites`
+### Passwords
+_naming convention:_\
+`web-browser_google-chrome_passwords.csv`
+- Google Chrome URL: `chrome://password-manager` or `chrome://settings/passwords` (older Chrome versions)\
+- Microsoft Edge URL: `edge://wallet/passwords` or `edge://settings/passwords` (older Edge versions)\
+- AVG Secure Browser URL: `secure://password-manager` or `secure://settings/passwords` (older Secure Browser versions)\
+- Mozilla Firefox URL: `about:logins`\
+  *( Firefox may require multiple updates before the Export Passwords button is available )*
+- Microsoft Internet Explorer: use [Nirsoft IE PassView](https://www.nirsoft.net/utils/internet_explorer_password.html)
+### Sync
+*naming convention:*\
+`web-browser_google-chrome_sync.txt`
 
-  For each installed web browser complete the following:
+Sync each browser with their relevant accounts ( if available )\
+*Manual exports of Bookmarks + Passwords are good, but syncing the entire browser is better, try to do both*
+- Google Chrome: `Google Account`
+	- `chrome://sync-internals`
+	- Check Enabled: `Sync Feature Enabled` = true
+	- Check Account: `Username`
+	- Checked Synced: `Last Synced` = Just now
+	- Check Not Actively Syncing: `Sync Cycle Ongoing` = false
+	- Force Sync (if required): `chrome://extensions` - enable `Developer mode` - click `Update`
+- Microsoft Edge: `Microsoft Account`
+	- `edge://sync-internals`
+	- Check Enabled: `Sync Feature Enabled` = true
+	- Check Account: `Username`
+	- Checked Synced: `Last Synced` = Just now
+	- Check Not Actively Syncing: `Sync Cycle Ongoing` = false
+	- Force Sync (if required): `edge://extensions` - enable `Developer mode` - click `Update`
+- Mozilla Firefox: `Mozilla Account`
+  %% TODO %%\
+	*example 1:*
+	```
+	ENABLED
+	
+	john.smith@example.com
+	
+	sync up to date
+	```
+	*example 2:*
+	```
+	DISABLED
+	
+	no account signed in
+	```
 
-  - **Export Bookmarks**\
-    _naming convention:_\
-    `web-browser_google-chrome_bookmarks.html`\
-    or\
-    `Web Browser - Google Chrome - Bookmarks.html`
-    - Google Chrome URL: `chrome://bookmarks`\
-    - Microsoft Edge URL: `edge://favorites`\
-    - AVG Secure Browser URL: `secure://bookmarks`\
-    - Mozilla Firefox Hotkey: `Ctrl+Shift+O`\
-    - Microsoft Internet Explorer: `%USERPROFILE%\Favorites`
-
-  - **Export Passwords**\
-    _naming convention:_\
-    `web-browser_google-chrome_passwords.csv`\
-    or\
-    `Web Browser - Google Chrome - Passwords.csv`\
-    - Google Chrome URL: `chrome://password-manager` or `chrome://settings/passwords` (older Chrome versions)\
-    - Microsoft Edge URL: `edge://wallet/passwords` or `edge://settings/passwords` (older Edge versions)\
-    - AVG Secure Browser URL: `secure://password-manager` or `secure://settings/passwords` (older Secure Browser versions)\
-    - Mozilla Firefox URL: `about:logins`\
-      *(Firefox may require multiple updates before the Export Passwords button is available)*
-    - Microsoft Internet Explorer: use [Nirsoft IE PassView](https://www.nirsoft.net/utils/internet_explorer_password.html)
-
-  - **Sync Accounts**\
-    _Try to sync each browser with their relevant accounts if available_\
-    _Manual exports of Bookmarks + Passwords is good, but syncing the entire browser is better_\
-    _naming convention:_\
-    `web-browser_google-chrome_sync.txt`\
-    or\
-    `Web Browser - Google Chrome - Sync.txt`\
-    Save the sync account email address in this file and whether sync is enabled or note, and save "no account signed in" if there is no account signed in to the web browser.
-    - Google Chrome: `Google Account`
-      - `chrome://sync-internals`\
-      - Check Enabled: `Sync Feature Enabled` = true\
-      - Check Account: `Username`\
-      - Checked Synced: `Last Synced` = Just now\
-      - Check Not Actively Syncing: `Sync Cycle Ongoing` = false\
-      - Force Sync (if required): `chrome://extensions` - enable `Developer mode` - click `Update`\
-    - Microsoft Edge: `Microsoft Account`
-      - `edge://sync-internals`\
-      - Check Enabled: `Sync Feature Enabled` = true\
-      - Check Account: `Username`\
-      - Checked Synced: `Last Synced` = Just now\
-      - Check Not Actively Syncing: `Sync Cycle Ongoing` = false\
-      - Force Sync (if required): `edge://extensions` - enable `Developer mode` - click `Update`\
-    - AVG Secure Browser: `AVG Account`
-      <!-- - _TODO (but it's similar to Chrome)_\ -->
-    - Mozilla Firefox: `Mozilla Account`
-      <!-- - _TODO_ -->
-
+### Extensions
+- Extensions
+  *naming convention:*\
+  `web-browser_google-chrome_extensions.txt`\
+  or\
+  `Web Browser - Google Chrome - Extensions.txt`\
+  Save list of ENABLED and DISABLED web browser extensions.
+	- Google Chrome
+	  `chrome:\\extensions`
+	- Microsoft Edge
+	  `edge:\\extensions`
+	- Mozilla Firefox
+	  %% TODO %%
+  *example:*
+	```
+	ENABLED
+	
+	Adobe Acrobat Reader
+	Bitwarden Password Manager
+	uBlock Origin
+	
+	DISABLED
+	
+	Google Docs Offline
+	```
 ## Programs
-
-- **Export Installed Programs List**\
-    _naming convention:_\
-    `installed-programs_nirsoft-uninstallview.html`\
-    or\
-    `Installed Programs - Nirsoft Uninstallview.html`
+  _naming convention:_\
+  `installed-programs_nirsoft-uninstallview.html`
+- **Export Installed Programs List**
 	- Use `Nirsoft UninstallView` and `Nirsoft InstalledPackagesView`, save all as `Horizontal HTML`
+### Winget
+naming convention:\
+`winget.json`\
+`winget_unavailable.txt`
+- Open a Terminal as Administrator\
+  Run `wt` or `powershell` or `cmd`
+- Change in to Data Transfer folder\
+  `cd d:\Job#5000\Data-Transfer_2025-01-21\`
+- Check Winget is installed\
+  `winget -v` (this will throw an error if winget is unavailable)
+- Update Winget `winget source update`
+- Export Winget's list of installed programs\
+  `winget export -o winget.json`\
+- [ <font style="color:ORANGE">OPTIONAL</font> ] Export a list of all programs that Winget cannot re-install at the same time with this extended command\
+  `winget export -o winget.json > winget_unavailable.txt`
 
-- **Export Winget**\
-    _naming convention:_\
-    `winget.json`
-    - Open a Terminal as Administrator\
-      Run `wt` or `powershell` or `cmd`
-    - Change in to Data Transfer folder\
-      `cd d:\Job#5000\Data-Transfer_2025-01-21\`
-    - Check Winget is installed\
-      `winget -v` (this will throw an error if winget is unavailable)
-    - Update Winget `winget source update`
-    - Export Winget's list of installed programs\
-      `winget export -o winget.json`\
-    - [ <font style="color:ORANGE">OPTIONAL</font> ] Export a list of all programs that Winget cannot re-install at the same time with this extended command\
-      `winget export -o winget.json > winget_unavailable.txt`
-  - [ <font style="color:ORANGE">ALTERNATIVE</font> ] Create Winget Install Script using 3rd party site\
+[ <font style="color:ORANGE">ALTERNATIVE</font> ] Create Winget Install Script using 3rd party site\
     [winstall.app](https://winstall.app/)\
     [winget.run](https://winget.run/)
 
 ## Licenses
 
   _naming convention:_\
-  `license-keys_nirsoft-product-key-scanner.html`\
-  or\
-  `License Keys - Nirsoft Product Key Scanner.html`
-  - _use Nirsoft Product Key Scanner or Nirsoft ProduKey, save all as Horizontal HTML_
+  `license-keys_nirsoft-product-key-scanner.html`
+  - _use Nirsoft Product Key Scanner and Nirsoft ProduKey, save all as Horizontal HTML_
 
 ## Emails / Calendars / Contacts
 
-  - Extract Passwords and Server Settings
-    - Nirsoft Mail PassView
-    - Nirsoft WinMailPassRec
-    - Nirsoft PstPassword
-  - Backup any accounts set up as POP
-    - [_How to export emails to file in Outlook_](https://support.microsoft.com/en-au/office/back-up-your-email-e5845b0b-1aeb-424f-924c-aa1c33b18833)
-  - Export Calendars
-  - Export Contacts
+- Extract Passwords and Server Settings
+	- Nirsoft Mail PassView
+	- Nirsoft PstPassword
+	- Nirsoft WinMailPassRec
+- Backup any accounts set up as POP or IMAP
+	- [_How to export emails to file in Outlook_](https://support.microsoft.com/en-au/office/back-up-your-email-e5845b0b-1aeb-424f-924c-aa1c33b18833)
+- Export Calendars
+- Export Contacts
+
+### Outlook Profiles
+*naming convention:*\
+`outlook_profile.reg`
+
+Export the appropriate Registry keys for the installed Outlook (classic) version.
+
+| Office Version | Outlook Profile Registry Location                                 |
+| :------------- | :---------------------------------------------------------------- |
+| 2007           |                                                                   |
+| 2010           |                                                                   |
+| 2013           |                                                                   |
+| 2016+          | HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\Outlook\Profiles |
+## Wireless Networks
+*naming convention:*\
+`wireless-networks_nirsoft-wirelesskeyview.txt`\
+or\
+`Wireless Networks - Nirsoft WirelessKeyView.txt`
+- use Nirsoft WirelessKeyView to export all known wireless networks\
+  *File > Export All*
+
+## Printers
+
+- Create a new text document for noting their installed printers
+  *naming convention:*\
+  `printers.txt`
+- Open `Printers and Scanners`\
+  run: `control printers`
+- Add each installed printer model and port to `printers.txt`\
+  *example:*
+	```
+	Canon TR8660a (USB) [DEFAULT]
+	Epson WF-2530 (WSD)
+	Brother MFC-L3755CDW (IP)
+	```
 
 ## Drivers
 
@@ -234,18 +300,21 @@ tags:
 > │  │  ├─ users.txt
 > │  │  ├─ web-browser_addons_nirsoft-browseraddonsview.html
 > │  │  ├─ web-browser_google-chrome_bookmarks.html
+> │  │  ├─ web-browser_google-chrome_extensions.txt
 > │  │  ├─ web-browser_google-chrome_passwords.csv
 > │  │  ├─ web-browser_google-chrome_sync.txt
 > │  │  ├─ web-browser_microsoft-edge_bookmarks.html
+> │  │  ├─ web-browser_microsoft-edge_extensions.txt
 > │  │  ├─ web-browser_microsoft-edge_passwords.csv
-> │  │  ├─ web-browser_micrsoft-edge_sync.txt
+> │  │  ├─ web-browser_microsoft-edge_sync.txt
 > │  │  ├─ web-browser_mozilla-firefox_bookmarks.html
+> │  │  ├─ web-browser_mozilla-firefox_extensions.txt
 > │  │  ├─ web-browser_mozilla-firefox_passwords.csv
 > │  │  ├─ web-browser_mozilla-firefox_sync.txt
 > │  │  ├─ windows.txt
 > │  │  ├─ winget.json
 > │  │  ├─ winget_unavailable.txt
-> │  │  ├─ wireless-networks_nirsoft-wirelesskeyview.html
+> │  │  ├─ wireless-networks_nirsoft-wirelesskeyview.txt
 > │  ├─ John Smith.txt
 > ```
 > This should now be a comprehensive export of the old source device.\
@@ -283,11 +352,12 @@ tags:
  >   Run `ms-windows-store://pdp/?productid=BF712690PMLF&OCID=windowssmodesupportpage`
  > - Follow the prompts to Switch Out of S Mode\
  >   *this will change the Windows edition installed to Windows 10/11 Home or Pro as per it's installed license*
-- **Configure System Restore**\
-- **Check installed Windows' Edition**\
+- **Configure System Restore**
+- **Check installed Windows' Edition**
   - _Run_ `winver`
 - **Create a new System Restore point**\
-  `COPS - Fresh Windows 10/11 Home/Pro Install` (use 10 or 11 and Home or Pro as per `winver`)
+  `COPS - Fresh Windows 10/11 Home/Pro Install`\
+  ( use 10 or 11 and Home or Pro as per `winver` )
 - **Connect to the Internet** (if not already)
 - **Check Windows is activated**\
   `ms-settings:activation`\
