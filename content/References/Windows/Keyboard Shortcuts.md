@@ -1,6 +1,6 @@
 ---
 title: Keyboard Shortcuts
-updated: 2025-09-03
+updated:
 tags:
   - references
   - windows
