@@ -371,29 +371,29 @@ Copy `C:\Windows\Fonts` folder in to the data transfer folder
 # Prepare New Device *( if required )*
 
 - **Create a Local Account during Windows 10/11 Out of Box Experience ( OOBE )**
-  - **Option 1: No Internet Connected**\
-    Bypass Network Registration
-    - _Open Command Prompt:_ `Shift+F10` _(may require pressing `Fn` on some devices)_
-    - _Run command:_ `OOBE\BYPASSNRO` _(this will restart the OOBE if successful)_
-    - _Proceed through OOBE like normal until you get to the Network Selection screen_
-    - _Select_ `I don't have an internet connection` _(if this button is not available the bypass didn't work, proceed to Option 2)_
-    - _Select_ `Continue with limited setup`
-    - _Create a Local Account:_ `COPS` ( no password )
-    - _Complete the OOBE as normal_
-  - **Option 2: Internet Connected**\
-    Force Local Account Creation
-    - _Proceed though OOBE like normal until you get to the Login with a Microsoft Account screen_\
-    - _Open Command Prompt:_ `Shift+F10` _(may require pressing `Fn` on some devices)_
-    - _Run command:_ `start ms-cxh:localonly`
-    - _Create a Local Account:_ `COPS` ( no password )
-    - _Complete the OOBE as normal_
+- **Option 1: No Internet Connected**\
+  Bypass Network Registration
+	- _Open Command Prompt:_ `Shift+F10` _( may require pressing `Fn` on some devices )_
+	- _Run command:_ `OOBE\BYPASSNRO` _( this will restart the OOBE if successful )_
+	- _Proceed through OOBE like normal until you get to the Network Selection screen_
+	- _Select_ `I don't have an internet connection` _( if this button is not available the bypass didn't work, proceed to Option 2 )_
+	- _Select_ `Continue with limited setup`
+	- _Create a Local Account:_ `COPS` ( no password )
+	- _Complete the OOBE as normal_
+- **Option 2: Internet Connected**\
+  Force Local Account Creation
+	- _Proceed though OOBE like normal until you get to the Login with a Microsoft Account screen_
+	- _Open Command Prompt:_ `Shift+F10` _( may require pressing `Fn` on some devices )_
+	- _Run command:_ `start ms-cxh:localonly`
+	- _Create a Local Account:_ `COPS` ( no password )
+	- _Complete the OOBE as normal_
 - **Option 3: Internet Connected ( New Bypass )**
   %% reference: https://github.com/ChrisTitusTech/bypassnro %%
   %% reference: https://www.youtube.com/watch?v=aEWb1otLVPo %%
   Apply unattend.xml
 	- Open Command Prompt: `Shift+F10` ( may require pressing `Fn` on some devices )
 	- Run the following commands:
-		```batch
+	  ```batch
 	  curl -L christitus.com/bypass -o skip.cmd
 	  skip.cmd
 	  ```
