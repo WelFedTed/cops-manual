@@ -13,24 +13,25 @@ tags:
 
 ## Windows
 
-  - Restart Windows\
-    _Force Restart Windows now to provide a clean environment befor proceeding_\
-  - [ <font style="color:ORANGE">OPTIONAL</font> ] Create a new System Restore point
+  - [ <font style="color:ORANGE">OPTIONAL</font> ] Restart Windows\
+    _Force Restart Windows now to provide a clean environment before proceeding_
+  - [ <font style="color:ORANGE">OPTIONAL</font> ] Create a new System Restore point\
+    `COPS - Pre Data Transfer`
 
 ## Transfer Drive
 
-- Create a Job folder on the Transfer Drive
-    _naming convention:_\
-    `Job#5000`
+- Create a Job folder on the Transfer Drive\
+  _naming convention:_\
+  `Job#5000`
 - [ <font style="color:ORANGE">OPTIONAL</font> ] Create a .txt file with the customer's name for quick identification when browsing job folders\
   *naming convention:*\
   `John Smith.txt`
 - Create a dated Data Transfer folder inside of the Job folder\
-  This is the folder where all exported user data will be saved for the data transfer\
   *naming convention:*\
   `Data-Transfer_2025-01-21`\
-  *(append the date to this folder name, so we don't need to date each file individually, but should you add/edit export files inside this folder at a later date then append the date to those filenames)*
-> [!example]- Example: Starting Export File Structure
+  This is the folder where all exported user data will be saved for the data transfer\
+  *( append the date to this folder name, so we don't need to date each file individually, but should you add/edit export files inside this folder at a later date then append the date to those filenames )*
+> [!example] Example: Starting Export File Structure
 > The starting file/folder structure should look similar to this example:
 > ```
 > /
@@ -56,34 +57,49 @@ tags:
   - _Copy `C:\Users\` folder to the Job folder on the Transfer Drive_
 
 ## Security
+*naming convention:*\
+`security.txt`
 
-- Create a new text document for noting their security software details
-  *file name:*\
-  `security.txt`
+Create a new text document for noting their security software details
 - Add the name of the security software
 - Add if the software is PAID or FREE
-- Add the add the username/email of the account signed in to the software *( if available )*
 - Add the serial number / license key used to activate the software *( if available )*
+- Add the add the username/email of the account signed in to the software *( if available )*
 - Disable the Antivirus\
   *Some of our extraction tools prompt false positives in the majority of security software*
+> [!example] Example: security.txt
+> ```
+> Trend Micro Internet Security
+> 
+> PAID
+> 
+> PVMD-0123-1234-2345-3456
+> 
+> john.smith@example.com
+> example-password
+> ```
 
 ## Web Browsers
 Complete the following exports for each installed web browser
 ### Bookmarks
 *naming convention:*\
 `web-browser_google-chrome_bookmarks.html`
-- Google Chrome URL: `chrome://bookmarks`\
-- Microsoft Edge URL: `edge://favorites`\
-- AVG Secure Browser URL: `secure://bookmarks`\
-- Mozilla Firefox Hotkey: `Ctrl+Shift+O`\
+- Google Chrome URL: `chrome://bookmarks`
+- Microsoft Edge URL: `edge://favorites`
+- AVG Secure Browser URL: `secure://bookmarks`
+- Mozilla Firefox Hotkey: `Ctrl+Shift+O`
 - Microsoft Internet Explorer: `%USERPROFILE%\Favorites`
 ### Passwords
 _naming convention:_\
 `web-browser_google-chrome_passwords.csv`
-- Google Chrome URL: `chrome://password-manager` or `chrome://settings/passwords` (older Chrome versions)\
-- Microsoft Edge URL: `edge://wallet/passwords` or `edge://settings/passwords` (older Edge versions)\
-- AVG Secure Browser URL: `secure://password-manager` or `secure://settings/passwords` (older Secure Browser versions)\
-- Mozilla Firefox URL: `about:logins`\
+- Google Chrome URL\
+  `chrome://password-manager` or `chrome://settings/passwords` ( older Chrome versions )
+- Microsoft Edge URL\
+  `edge://wallet/passwords` or `edge://settings/passwords` ( older Edge versions )
+- AVG Secure Browser URL\
+  `secure://password-manager` or `secure://settings/passwords` ( older Secure Browser versions )
+- Mozilla Firefox URL\
+  `about:logins`\
   *( Firefox may require multiple updates before the Export Passwords button is available )*
 - Microsoft Internet Explorer: use [Nirsoft IE PassView](https://www.nirsoft.net/utils/internet_explorer_password.html)
 ### Sync
@@ -107,47 +123,45 @@ Sync each browser with their relevant accounts ( if available )\
 	- Check Not Actively Syncing: `Sync Cycle Ongoing` = false
 	- Force Sync (if required): `edge://extensions` - enable `Developer mode` - click `Update`
 - Mozilla Firefox: `Mozilla Account`
-  %% TODO %%\
-	*example 1:*
-	```
-	ENABLED
-	
-	john.smith@example.com
-	
-	sync up to date
-	```
-	*example 2:*
-	```
-	DISABLED
-	
-	no account signed in
-	```
+  %% TODO %%
+> [!example] Example: web-browser_google-chrome_sync.txt (ENABLED)
+> ```
+> ENABLED
+> 
+> john.smith@example.com
+> 
+> sync up to date
+> ```
+
+> [!example] Example: web-browser_google-chrome_sync.txt (DISABLED)
+> ```
+> DISABLED
+> 
+> no account signed in
+> ```
 
 ### Extensions
-- Extensions
   *naming convention:*\
-  `web-browser_google-chrome_extensions.txt`\
-  or\
-  `Web Browser - Google Chrome - Extensions.txt`\
-  Save list of ENABLED and DISABLED web browser extensions.
-	- Google Chrome
-	  `chrome:\\extensions`
-	- Microsoft Edge
-	  `edge:\\extensions`
-	- Mozilla Firefox
-	  %% TODO %%
-  *example:*
-	```
-	ENABLED
-	
-	Adobe Acrobat Reader
-	Bitwarden Password Manager
-	uBlock Origin
-	
-	DISABLED
-	
-	Google Docs Offline
-	```
+  `web-browser_google-chrome_extensions.txt`
+
+Save list of ENABLED and DISABLED web browser extensions.
+- Google Chrome\
+  `chrome:\\extensions`
+- Microsoft Edge\
+  `edge:\\extensions`
+- Mozilla Firefox
+  %% TODO %%
+> [!example] Example: web-browser_google-chrome_extensions.txt
+> ```
+> ENABLED
+> 
+> Adobe Acrobat Reader
+> Bitwarden Password Manager
+> uBlock Origin
+> 
+> DISABLED
+> Google Docs Offline
+> ```
 ## Programs
   _naming convention:_\
   `installed-programs_nirsoft-uninstallview.html`
@@ -165,8 +179,8 @@ naming convention:\
   `winget -v` (this will throw an error if winget is unavailable)
 - Update Winget `winget source update`
 - Export Winget's list of installed programs\
-  `winget export -o winget.json`\
-- [ <font style="color:ORANGE">OPTIONAL</font> ] Export a list of all programs that Winget cannot re-install at the same time with this extended command\
+  `winget export -o winget.json`
+- Export a list of all programs that the Winget export will not re-install\
   `winget export -o winget.json > winget_unavailable.txt`
 
 [ <font style="color:ORANGE">ALTERNATIVE</font> ] Create Winget Install Script using 3rd party site\
@@ -174,13 +188,11 @@ naming convention:\
     [winget.run](https://winget.run/)
 
 ## Licenses
-
   _naming convention:_\
   `license-keys_nirsoft-product-key-scanner.html`
   - _use Nirsoft Product Key Scanner and Nirsoft ProduKey, save all as Horizontal HTML_
 
 ## Emails / Calendars / Contacts
-
 - Extract Passwords and Server Settings
 	- Nirsoft Mail PassView
 	- Nirsoft PstPassword
@@ -189,7 +201,6 @@ naming convention:\
 	- [_How to export emails to file in Outlook_](https://support.microsoft.com/en-au/office/back-up-your-email-e5845b0b-1aeb-424f-924c-aa1c33b18833)
 - Export Calendars
 - Export Contacts
-
 ### Outlook Profiles
 *naming convention:*\
 `outlook_profile.reg`
@@ -204,41 +215,78 @@ Export the appropriate Registry keys for the installed Outlook (classic) version
 | 2016+          | HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\Outlook\Profiles |
 ## Wireless Networks
 *naming convention:*\
-`wireless-networks_nirsoft-wirelesskeyview.txt`\
-or\
-`Wireless Networks - Nirsoft WirelessKeyView.txt`
-- use Nirsoft WirelessKeyView to export all known wireless networks\
-  *File > Export All*
+`wireless-networks_nirsoft-wirelesskeyview.txt`
 
+- Open `Nirsoft WirelessKeyView` as Administrator
+- Click `File`
+- Click `Export All`
+- Save export to transfer folder
 ## Printers
-
 - Create a new text document for noting their installed printers
   *naming convention:*\
   `printers.txt`
 - Open `Printers and Scanners`\
   run: `control printers`
-- Add each installed printer model and port to `printers.txt`\
-  *example:*
-	```
-	Canon TR8660a (USB) [DEFAULT]
-	Epson WF-2530 (WSD)
-	Brother MFC-L3755CDW (IP)
-	```
-
+- Add each installed printer model and port to `printers.txt`
+> [!example] Example: printers.txt
+> ```
+> Canon TR8660a (USB) [DEFAULT]
+> Epson WF-2530 (WSD)
+> Brother MFC-L3755CDW (IP)
+> ```
 ## Drivers
-
+- Open a Terminal as Administrator\
+  Run `wt` or `powershell` or `cmd`
+- Change in to Data Transfer folder\
+  `cd d:\Job#5000\Data-Transfer_2025-01-21\`
+- Make empty `drivers` directory\
+  `mkdir drivers`
 - Export Drivers\
-  _naming convention:_\
-  `TRANSFERDRIVE:\\Job#5000\drivers\`
-- Open `PowerShell` as an Administrator and run the following script:\
-  `Export-WindowsDriver -Online -Destination "REPLACE-WITH-TARGET-FOLDER"`\
-  _update REPLACE-WITH-TARGET-FOLDER with the target drivers folder on the transfer drive_
+  `Export-WindowsDriver -Online -Destination drivers`
+## Users
+*naming convention:*\
+`users.txt`
+> [!example] Example users.txt
+> ```
+> john (john.smith@example.com) [ADMIN]
+> 
+> jane (local account) [USER]
+> ```
+## Office
+*naming convention:*\
+`office.txt`
 
+Note which office suite the customer is currently using, along with if and how it is activated.
+> [!example] Example office.txt
+> ```
+> Microsoft Office 2019
+> 
+> john.smith@example.com
+> 
+> XJGKF-ALJDP-4VKE9-E99SD-ABCDE
+> ```
+## Fonts
+Copy `C:\Windows\Fonts` folder in to the data transfer folder
+## Desktop
+*naming convention:*\
+`desktop_screenshot.png`\
+`desktop_wallpaper.jgp`
+### Screenshot
+- Close all programs *( to show only pinned taskbar shortcuts )*
+- Screenshot the entire desktop\
+  `Win+Shift+S`
+- Click on the screen shot pop-up
+- Save screenshot to transfer folder
+### Wallpaper
+- Run `%APPDATA%\Microsoft\Windows\Themes`
+- Copy `transcoded`to the transfer folder\
+  *( this is the current transcoded copy of the desktop wallpaper )*
+- Rename the copied `transcoded` to `desktop_wallpaper.jpg`
 ## Other
-
 - Check C: Drive for unusual files/folders to transfer\
-  _copy to Job folder copying the C: Drive file structure (TransferDrive:\\Job\#5000\\C\\FolderToSave)_
+  _copy to Job folder copying the C: Drive file structure ( TransferDrive:\\Job\#5000\\C\\FolderToSave )_
 - Repeat this process for any additional drive letters the device may have installed
+
 > [!example]- Example: Final Export File Structure
 > This is what the final export file/folder structure should look like:
 > ```
@@ -294,9 +342,9 @@ or\
 > │  │  ├─ remote-desktop_nirsoft-remote-desktop-passview.html
 > │  │  ├─ remote-desktop_nirsoft-vncpassview.html
 > │  │  ├─ security-software_nirsoft-securitysoftview.html
+> │  │  ├─ security.txt
 > │  │  ├─ startup-items_nirsoft-whatinstartup.html
 > │  │  ├─ symlinks_nirsoft-ntfslinksview.html
-> │  │  ├─ trend-micro.txt
 > │  │  ├─ users.txt
 > │  │  ├─ web-browser_addons_nirsoft-browseraddonsview.html
 > │  │  ├─ web-browser_google-chrome_bookmarks.html
@@ -320,26 +368,36 @@ or\
 > This should now be a comprehensive export of the old source device.\
 > You may not import *all* of these exports on to the new target device, but you should have everything you *might* need to reference during the restoration process.
 
-# Prepare New Device _(if required)_
+# Prepare New Device *( if required )*
 
-- **Create a Local Account during Windows 10/11 Out of Box Experience (OOBE)**
+- **Create a Local Account during Windows 10/11 Out of Box Experience ( OOBE )**
   - **Option 1: No Internet Connected**\
     Bypass Network Registration
-    - _Open Command Prompt:_ `Shift+F10` _(may require pressing `Fn` on some devices)_\
-    - _Run command:_ `OOBE\BYPASSNRO` _(this will restart the OOBE if successful)_\
-    - _Proceed through OOBE like normal until you get to the Network Selection screen_\
-    - _Select_ `I don't have an internet connection` _(if this button is not available the bypass didn't work, proceed to Option 2)_\
-    - _Select_ `Continue with limited setup`\
-    - _Create a Local Account:_ `COPS` (no password)\
+    - _Open Command Prompt:_ `Shift+F10` _(may require pressing `Fn` on some devices)_
+    - _Run command:_ `OOBE\BYPASSNRO` _(this will restart the OOBE if successful)_
+    - _Proceed through OOBE like normal until you get to the Network Selection screen_
+    - _Select_ `I don't have an internet connection` _(if this button is not available the bypass didn't work, proceed to Option 2)_
+    - _Select_ `Continue with limited setup`
+    - _Create a Local Account:_ `COPS` ( no password )
     - _Complete the OOBE as normal_
   - **Option 2: Internet Connected**\
     Force Local Account Creation
     - _Proceed though OOBE like normal until you get to the Login with a Microsoft Account screen_\
-    - _Open Command Prompt:_ `Shift+F10` _(may require pressing `Fn` on some devices)_\
+    - _Open Command Prompt:_ `Shift+F10` _(may require pressing `Fn` on some devices)_
     - _Run command:_ `start ms-cxh:localonly`
-    - _Create a Local Account:_ `COPS` (no password)\
+    - _Create a Local Account:_ `COPS` ( no password )
     - _Complete the OOBE as normal_
-  - Note regarding Windows 10/11 S Mode\
+- **Option 3: Internet Connected ( New Bypass )**
+  %% reference: https://github.com/ChrisTitusTech/bypassnro %%
+  %% reference: https://www.youtube.com/watch?v=aEWb1otLVPo %%
+  Apply unattend.xml
+	- Open Command Prompt: `Shift+F10` ( may require pressing `Fn` on some devices )
+	- Run the following commands:
+		```batch
+	  curl -L christitus.com/bypass -o skip.cmd
+	  skip.cmd
+	  ```
+- Note regarding Windows 10/11 S Mode\
     In some cases you won't be able to open the Command Prompt, you may only see it's black box flash up on the screen and quickly dissapear. This is could be a indication of the Windows 10/11 install being in S Mode (Store Mode), which disables access to terminals (i.e. Command Prompt) and execution of non Microsoft Store apps.\
     If you encounter this, you will <u>not</u> be able create a Local Account during the OOBE, and you will need to complete the OOBE with the customer's Microsoft Account.
     After the OOBE is complete and you've reached the Windows Desktop environment, you may need to [Switch Out of S Mode](https://support.microsoft.com/en-au/windows/switching-out-of-s-mode-in-windows-4f56d9be-99ec-6983-119f-031bfb28a307) to proceed with the Data Transfer, as S Mode restricts us from running our tools if required.
@@ -376,12 +434,12 @@ or\
     - Delivery Optimization
       - Enable `Allow downloads from other devices`
         - Select `Devices on my local network`
-- **Update Microsoft Store Apps**\
-  - Open Microsoft Store\
-    `ms-windows-store:`
-    - Click `Downloads`
-    - Click `Check for updates`
-    - Click `Update all`
+- **Update Microsoft Store Apps**
+	- Open Microsoft Store\
+	  `ms-windows-store:`
+		- Click `Downloads`
+		- Click `Check for updates`
+		- Click `Update all`
 - **Update Winget Apps**\
   - Open a Terminal\
     `wt` or `powershell` or `cmd`
