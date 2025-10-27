@@ -30,7 +30,7 @@ Use any current Apple device management software to first backup the source devi
 	- iTunes *( deprecated )*
 > [!info] iOS Backup Encryption
 > %% refernce: https://support.apple.com/en-au/108353 %%
-> iOS device backups require encryption to be enabled to backup 'sensitive data'.
+> iOS device backups require encryption to be enabled to backup 'sensitive data'.\
 > Sensitive data includes:
 > - Saved Passwords
 > - Wi-Fi Settings
