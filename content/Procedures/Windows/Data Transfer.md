@@ -193,6 +193,11 @@ naming convention:\
   - _use Nirsoft Product Key Scanner and Nirsoft ProduKey, save all as Horizontal HTML_
 
 ## Emails / Calendars / Contacts
+
+*naming convenion:*\
+`email-clients_nirsoft-mail-passview.html`\
+`outlook_export_john.smith@example.com.pst`
+
 - Extract Passwords and Server Settings
 	- Nirsoft Mail PassView
 	- Nirsoft PstPassword

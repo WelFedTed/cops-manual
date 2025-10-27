@@ -1,6 +1,6 @@
 ---
 title: Reset Passwords
-updated: 2025-08-30T06:17:00
+updated:
 tags:
   - procedures
   - windows
@@ -15,8 +15,22 @@ tags:
 %% TODO: Flesh out  steps  %%
     
 ## Medicat
+- Boot in to `Medicat`
+- Select `Password Tools`
+- Select `Jayroy's Lockpick` *( folder )*
+- Select `Jayroy's Lockpick` *( image )*
+- Select `Normal` *( boot mode )*
+- Select `PC Unlocker` from tool list
 
 ## PC Unlocker
+- Boot in to `PC Unlocker`
+- Select SAM registry file from the target Windows drive if its not automatically selected\
+  `C:\Windows\System32\config\SAM`\
+  *( if you can not browse the target drive, then it may have BitLocker enabled )*
+- Select the target User Account
+- Click `Reset`
+- Leave password fields blank and click `OK`\
+  *( leaving these fields blank will remove the password from the account entirely )*
 
 # Method 2: Manual
 
