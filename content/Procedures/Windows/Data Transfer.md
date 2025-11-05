@@ -190,22 +190,25 @@ naming convention:\
 ## Licenses
   _naming convention:_\
   `license-keys_nirsoft-product-key-scanner.html`
-  - _use Nirsoft Product Key Scanner and Nirsoft ProduKey, save all as Horizontal HTML_
+  - _use `Nirsoft Product Key Scanner` and `Nirsoft ProduKey`, save all as Horizontal HTML_
 
 ## Emails / Calendars / Contacts
 
-*naming convenion:*\
+*naming convention:*\
 `email-clients_nirsoft-mail-passview.html`\
 `outlook_export_john.smith@example.com.pst`
 
 - Extract Passwords and Server Settings
-	- Nirsoft Mail PassView
-	- Nirsoft PstPassword
-	- Nirsoft WinMailPassRec
+	- `Nirsoft Mail PassView`
+	- `Nirsoft PstPassword`
+	- `Nirsoft WinMailPassRec`
 - Backup any accounts set up as POP or IMAP
-	- [_How to export emails to file in Outlook_](https://support.microsoft.com/en-au/office/back-up-your-email-e5845b0b-1aeb-424f-924c-aa1c33b18833)
+	- [How to export emails to file in Outlook](https://support.microsoft.com/en-au/office/back-up-your-email-e5845b0b-1aeb-424f-924c-aa1c33b18833)
 - Export Calendars
 - Export Contacts
+	- [How to export Contacts in Outlook (new)](https://support.microsoft.com/en-au/office/import-or-export-contacts-in-outlook-using-a-csv-file-bb796340-b58a-46c1-90c7-b549b8f3c5f8#picktab=new_outlook)
+	- [How to export Contacts in Outlook (classic)](https://support.microsoft.com/en-au/office/import-or-export-contacts-in-outlook-using-a-csv-file-bb796340-b58a-46c1-90c7-b549b8f3c5f8#picktab=classic_outlook)
+	- [How to export Contacts in Windows Mail (People App)](https://support.microsoft.com/en-au/office/export-emails-and-contacts-from-windows-mail-or-people-and-import-to-new-outlook-7ced6135-3d1d-409b-b2da-4282a69c151b)
 ### Outlook Profiles
 *naming convention:*\
 `outlook_profile.reg`
@@ -218,27 +221,25 @@ Export the appropriate Registry keys for the installed Outlook (classic) version
 | 2010           |                                                                   |
 | 2013           |                                                                   |
 | 2016+          | HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\Outlook\Profiles |
-## Wireless Networks
-*naming convention:*\
-`wireless-networks_nirsoft-wirelesskeyview.txt`
 
-- Open `Nirsoft WirelessKeyView` as Administrator
-- Click `File`
-- Click `Export All`
-- Save export to transfer folder
 ## Printers
-- Create a new text document for noting their installed printers
   *naming convention:*\
   `printers.txt`
 - Open `Printers and Scanners`\
-  run: `control printers`
-- Add each installed printer model and port to `printers.txt`
+  `control printers`
+- Note each installed printer model and port in `printers.txt`\
+  *( also note which printer is set as the default if available )*
 > [!example] Example: printers.txt
 > ```
 > Canon TR8660a (USB) [DEFAULT]
 > Epson WF-2530 (WSD)
 > Brother MFC-L3755CDW (IP)
 > ```
+### Installers
+- Create a `printers` folder
+	- Create a subfolder for each installed printer\
+	  eg. `Canon TR8600 series`
+		- Download the full driver + software installer for this printer and save to this subfolder
 ## Drivers
 - Open a Terminal as Administrator\
   Run `wt` or `powershell` or `cmd`
@@ -250,7 +251,12 @@ Export the appropriate Registry keys for the installed Outlook (classic) version
   `Export-WindowsDriver -Online -Destination drivers`
 ## Users
 *naming convention:*\
-`users.txt`
+`users.txt`\
+`users_nirsoft-userprofilesview.html`
+- Run `netplwiz` for a list of valid users
+- Note each username, it's group (User or Administrator), and whether they're a Microsoft or Local account in `users.txt`
+- Also run `Nirsoft UserProfilesView` and save as `Horizontal HTML`\
+  *( this will save a list of all users and their associated user profile / home directories )*
 > [!example] Example users.txt
 > ```
 > john (john.smith@example.com) [ADMIN]
@@ -287,9 +293,52 @@ Copy `C:\Windows\Fonts` folder in to the data transfer folder
 - Copy `transcoded`to the transfer folder\
   *( this is the current transcoded copy of the desktop wallpaper )*
 - Rename the copied `transcoded` to `desktop_wallpaper.jpg`
+
+## OneDrive
+*naming convention:*\
+`onedrive.txt`
+>[!example] Example onedrive.txt
+>```
+>ENABLED
+>
+>john.smith@example.com
+>
+>sync up to date
+>```
+
+## Passwords
+*naming convention:*\
+`passwords_nirsoft-lostmypassword.html`\
+- Use `Nirsoft LostMyPassword`
+	- Select `Administrator` option
+	- Save as `Horizontal HTML`
+
+## Networking
+_naming convention:_\
+`network-interfaces_nirsoft-networkinterfacesview.html`\
+`network-credentials_nirsoft-network-password-recovery.html`\
+`wireless-networks_nirsoft-wirelesskeyview.txt`
+### Credentials
+- Open `Nirsoft Network Password Recovery` as Administrator
+	- Select All\
+	  `ctrl + a`
+	- Save as `Horizontal HTML`\
+	  `ctrl + s`
+### Interfaces
+- Open `Nirsoft NetworkInterfacesView` as Administrator
+	- Select All\
+	  `ctrl + a`
+	- Save as `Horizontal HTML`\
+	  `ctrl + s`
+### Wi-Fi Keys
+- Open `Nirsoft WirelessKeyView` as Administrator
+- Click `File`
+- Click `Export All`
+- Save export to transfer folder
 ## Other
 - Check C: Drive for unusual files/folders to transfer\
-  _copy to Job folder copying the C: Drive file structure ( TransferDrive:\\Job\#5000\\C\\FolderToSave )_
+  _copy to Job folder copying the C: Drive file structure\
+  ( TransferDrive:\\Job\#5000\\c\\DataToCopy )_
 - Repeat this process for any additional drive letters the device may have installed
 
 > [!example]- Example: Final Export File Structure
@@ -485,14 +534,30 @@ Copy `C:\Windows\Fonts` folder in to the data transfer folder
 
 # Restore
 
-- **Install Programs**
-  - you can use the winget install script for this if you made one \ - _install programs before restoring the user profile, as otherwise some required registry entries may not exist yet_
-- **Restore User Profiles**
-  - make Administrator, make default user, set no password and set password does NOT expire
+## User Accounts
+- Log in to the `COPS` user account
+- Run: `netplwiz`
+	- Create a new local user account for each user profile to be transferred\
+	  *( reuse the usernames from the old device )*
+	- Change the group of these new accounts to `Administrator` as per the old device
+- Log in and out of each of these new user accounts\
+  *( this lets Windows setup the new user profiles for us to update )*
+
+## User Profiles
+- Log in to the `COPS` user account
+- Copy the user data from the transfer drive to the device\
+  *( skip `AppData` and `OneDrive` for now, and do <u>NOT</u> copy the `NTUser.dat` )*
+	- If there was data in the `OneDrive` folder on the old device and you can't sign back in to it on the new machine, then copy the contents of the `OneDrive` folder in to the User Profile directly
+
+## Programs
+- Import winget export from old device\
+  `winget import winget.json`
+- Go through `winget_unavailable.txt` and manually install any missed programs as required\
+  `winget search xxxx` or search internet for installers
+
+## other
 - **Copy over any C: Drive files/folders that were backed up**
-- **Restart Windows** (this should log in to the restored user profile)
-  - open a command prompt window (or similar) as Administrator to ensure account has admin priviledges
-- **Install Printer Drivers**
+- **Printer Drivers**
   - If you can not install the printer drivers + software without the printer present, save the printer package installer to `C:\COPS\` and create a shortcut to it on the customer's desktop
 - **Check Web Browsers and restore Bookmarks and Passwords from backups as required**
 - **Activate software using extracted keys or accounts as required**
@@ -510,7 +575,7 @@ Copy `C:\Windows\Fonts` folder in to the data transfer folder
   - Delete `C:\Users\COPS\` folder\
   _Windows may prevent you from removing this folder if it's currently accessing it in the background, if this happens just restart Windows and try to remove it again_
   - Empty Recycle Bin
-- **System Maintenance/Repair**
+## System Maintenance/Repair
   - Open a Terminal as Administrator\
     `wt` or `powershell` or `cmd`
   - Run the following commands:
