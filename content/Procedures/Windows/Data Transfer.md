@@ -26,7 +26,7 @@ tags:
 - [ <font style="color:ORANGE">OPTIONAL</font> ] Create a .txt file with the customer's name for quick identification when browsing job folders\
   *naming convention:*\
   `John Smith.txt`
-- Create a dated Data Transfer folder inside of the Job folder\
+- Create a dated `Data Transfer folder` inside of the Job folder\
   *naming convention:*\
   `Data-Transfer_2025-01-21`\
   This is the folder where all exported user data will be saved for the data transfer\
@@ -54,7 +54,25 @@ tags:
 
 ## User Profiles
 
-  - _Copy `C:\Users\` folder to the Job folder on the Transfer Drive_
+### RClone
+Use `rclone` to copy user data if available, as it is multi-threaded (faster) and verifies copied files
+- Open a terminal as Administrator\
+  `wt` or `powershell` or `cmd`
+- Check if `rclone` is installed\
+  `rclone -V`\
+  *( this will show an error if not installed )*
+- If `rclone` not installed:
+	- Install `rclone`\
+	  `winget install rclone.rclone`
+	- Close and re-open the terminal\
+	  *( this will refresh the environment path/variables to make rclone available )*
+- Change in to Data Transfer folder\
+  `cd d:\Job#5000\Data-Transfer_2025-01-21\`
+- Copy `C:\Users` to `Data Transfer folder`\
+  `rclone copy c:\users users --progress`
+### Windows Explorer
+If `rclone` is unavailable, simply use Windows Explorer, just know it is single-threaded (slower) and does <u>not</u> verify copied files
+- Copy `C:\Users` to `Data Transfer folder` using `Windows Explorer`
 
 ## Security
 *naming convention:*\
@@ -65,7 +83,7 @@ Create a new text document for noting their security software details
 - Add if the software is PAID or FREE
 - Add the serial number / license key used to activate the software *( if available )*
 - Add the add the username/email of the account signed in to the software *( if available )*
-- Disable the Antivirus\
+- Disable the Security's Real-Time Protection\
   *Some of our extraction tools prompt false positives in the majority of security software*
 > [!example] Example: security.txt
 > ```
@@ -163,14 +181,11 @@ Save list of ENABLED and DISABLED web browser extensions.
 > Google Docs Offline
 > ```
 ## Programs
-  _naming convention:_\
-  `installed-programs_nirsoft-uninstallview.html`
-- **Export Installed Programs List**
-	- Use `Nirsoft UninstallView` and `Nirsoft InstalledPackagesView`, save all as `Horizontal HTML`
-### Winget
-naming convention:\
+_naming convention:_\
+`installed-programs_nirsoft-uninstallview.html`\
 `winget.json`\
 `winget_unavailable.txt`
+### Winget
 - Open a Terminal as Administrator\
   Run `wt` or `powershell` or `cmd`
 - Change in to Data Transfer folder\
@@ -182,45 +197,123 @@ naming convention:\
   `winget export -o winget.json`
 - Export a list of all programs that the Winget export will not re-install\
   `winget export -o winget.json > winget_unavailable.txt`
-
-[ <font style="color:ORANGE">ALTERNATIVE</font> ] Create Winget Install Script using 3rd party site\
-    [winstall.app](https://winstall.app/)\
-    [winget.run](https://winget.run/)
+### Tools
+- Open `Nirsoft InstalledAppView` as Administrator
+	- Select all\
+	  `ctrl+a`
+	- Save as `Horizontal HTML` to `Data Transfer folder`\
+	  `ctrl+s`
+- Open `Nirsoft InstalledPackagesView` as Administrator
+	- Select all\
+	  `ctrl+a`
+	- Save as `Horizontal HTML` to `Data Transfer folder`\
+	  `ctrl+s`
+- Open `Nirsoft UninstallView` as Administrator
+	- Select all\
+	  `ctrl+a`
+	- Save as `Horizontal HTML` to `Data Transfer folder`\
+	  `ctrl+s`
 
 ## Licenses
   _naming convention:_\
   `license-keys_nirsoft-product-key-scanner.html`
-  - _use `Nirsoft Product Key Scanner` and `Nirsoft ProduKey`, save all as Horizontal HTML_
+- Open `Nirsoft Product Key Scanner` as Administrator
+	- Select `Scan your current running system`
+	- Tick `Search product key with WMI`
+	- Tick `Search product key in BIOS`
+	- Click `OK`
+	- Select all\
+	  `ctrl+a`
+	- Save as `Horizontal HTML` to `Data Transfer folder`\
+	  `ctrl+s`
+- Open `Nirsoft ProduKey` as Administrator
+	- Select all\
+	  `ctrl+a`
+	- Save as `Horizontal HTML` to `Data Transfer folder`\
+	  `ctrl+s`
 
 ## Emails / Calendars / Contacts
 
 *naming convention:*\
 `email-clients_nirsoft-mail-passview.html`\
-`outlook_export_john.smith@example.com.pst`
-
-- Extract Passwords and Server Settings
-	- `Nirsoft Mail PassView`
-	- `Nirsoft PstPassword`
-	- `Nirsoft WinMailPassRec`
-- Backup any accounts set up as POP or IMAP
-	- [How to export emails to file in Outlook](https://support.microsoft.com/en-au/office/back-up-your-email-e5845b0b-1aeb-424f-924c-aa1c33b18833)
-- Export Calendars
-- Export Contacts
-	- [How to export Contacts in Outlook (new)](https://support.microsoft.com/en-au/office/import-or-export-contacts-in-outlook-using-a-csv-file-bb796340-b58a-46c1-90c7-b549b8f3c5f8#picktab=new_outlook)
-	- [How to export Contacts in Outlook (classic)](https://support.microsoft.com/en-au/office/import-or-export-contacts-in-outlook-using-a-csv-file-bb796340-b58a-46c1-90c7-b549b8f3c5f8#picktab=classic_outlook)
-	- [How to export Contacts in Windows Mail (People App)](https://support.microsoft.com/en-au/office/export-emails-and-contacts-from-windows-mail-or-people-and-import-to-new-outlook-7ced6135-3d1d-409b-b2da-4282a69c151b)
-### Outlook Profiles
-*naming convention:*\
+`outlook_export_john.smith@example.com.pst`\
+`outlook-classic.txt`\
 `outlook_profile.reg`
 
-Export the appropriate Registry keys for the installed Outlook (classic) version.
+### Outlook (Classic)
+- Create `outlook-classic.txt` in `Data Transfer folder`
+- Open `Control Panel`\
+  `control`
+- Click `Mail`
+- Note all email addresses in `outlook-classic.txt`
+- Note all data files in `outlook-classic.txt`
+> [!example] Example outlook-classic.txt
+> ```
+> EMAILS
+> 
+> john.smith@example.com
+> 
+> 
+> DATA FILES
+> 
+> john.smith@example.com.pst
+> C:\Users\jsmith\AppData\Local\Microsoft\Outlook\john.smith@example.com.pst
+> 
+> Archive
+> C:\Users\jsmith\AppData\Local\Microsoft\Outlook\archive.pst
+> ```
+#### Outlook Profile
+Export the appropriate Registry keys for the installed Outlook (classic) version as `outlook_profile.reg`
 
-| Office Version | Outlook Profile Registry Location                                 |
-| :------------- | :---------------------------------------------------------------- |
-| 2007           |                                                                   |
-| 2010           |                                                                   |
-| 2013           |                                                                   |
-| 2016+          | HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\Outlook\Profiles |
+| Office Version | Outlook Profile Registry Location                                                                           |
+| :------------- | :---------------------------------------------------------------------------------------------------------- |
+| 2007           | HKEY_CURRENT_USER\Software\Microsoft\Windows NT\CurrentVersion\Windows Messaging Subsystem\Profiles\Outlook |
+| 2010           |                                                                                                             |
+| 2013           | HKEY_CURRENT_USER\Software\Microsoft\Office\15.0\Outlook                                                    |
+| 2016+          | HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\Outlook                                                    |
+#### Exports
+- [How to export emails to file in Outlook](https://support.microsoft.com/en-au/office/back-up-your-email-e5845b0b-1aeb-424f-924c-aa1c33b18833)
+- [How to export Contacts in Outlook (classic)](https://support.microsoft.com/en-au/office/import-or-export-contacts-in-outlook-using-a-csv-file-bb796340-b58a-46c1-90c7-b549b8f3c5f8#picktab=classic_outlook)
+### Outlook (new)
+- Create `outlook-new.txt` file in `Data Transfer folder`
+- Open Outlook (new)
+- Note all email addresses and their connection type in `outlook-new.txt`
+> [!example] Example outlook-new.txt
+> ```
+> john.smith@example.com (IMAP)
+> john.smith@hotmail.com (outlook.com)
+> john.smith@bigpond.com (POP)
+> ```
+#### Exports
+- [How to export Contacts in Outlook (new)](https://support.microsoft.com/en-au/office/import-or-export-contacts-in-outlook-using-a-csv-file-bb796340-b58a-46c1-90c7-b549b8f3c5f8#picktab=new_outlook)
+### Windows Mail
+[How to export Contacts in Windows Mail (People App)](https://support.microsoft.com/en-au/office/export-emails-and-contacts-from-windows-mail-or-people-and-import-to-new-outlook-7ced6135-3d1d-409b-b2da-4282a69c151b)
+
+### Windows Live Mail
+
+### Mozilla Thunderbird
+Profile: `%APPDATA%\Roaming\Thunderbird`
+
+### EmClient
+
+### Tools
+- Open `Nirsoft Mail PassView` as Administrator
+	- Select all\
+	  `ctrl+a`
+	- Save as `Horizontal HTML` to `Data Transfer folder`\
+	  `ctrl+s`
+- Open `Nirsoft PstPassword` as Administrator
+	- Select all\
+	  `ctrl+a`
+	- Save as `Horizontal HTML` to `Data Transfer folder`\
+	  `ctrl+s`
+- Open `Nirsoft WinMailPassRec` as Administrator
+	- Select `Current user on this system`
+	- Click `OK`
+	- Select all\
+	  `ctrl+a`
+	- Save as `Horizontal HTML` to `Data Transfer folder`\
+	  `ctrl+s`
 
 ## Printers
   *naming convention:*\
@@ -255,19 +348,24 @@ Export the appropriate Registry keys for the installed Outlook (classic) version
 `users_nirsoft-userprofilesview.html`
 - Run `netplwiz` for a list of valid users
 - Note each username, it's group (User or Administrator), and whether they're a Microsoft or Local account in `users.txt`
-- Also run `Nirsoft UserProfilesView` and save as `Horizontal HTML`\
-  *( this will save a list of all users and their associated user profile / home directories )*
 > [!example] Example users.txt
 > ```
 > john (john.smith@example.com) [ADMIN]
 > 
 > jane (local account) [USER]
 > ```
+### Tools
+- Open `Nirsoft UserProfilesView` as Administrator
+	- Select all\
+	  `ctrl+a`
+	- Save as `Horizontal HTML` to `Data Transfer folder`\
+	  `ctrl+s`
+
 ## Office
 *naming convention:*\
 `office.txt`
 
-Note which office suite the customer is currently using, along with if and how it is activated.
+- Note which office suite the customer is currently using, along with if and how it is activated (including the attached Microsoft Account if available)
 > [!example] Example office.txt
 > ```
 > Microsoft Office 2019
@@ -277,7 +375,26 @@ Note which office suite the customer is currently using, along with if and how i
 > XJGKF-ALJDP-4VKE9-E99SD-ABCDE
 > ```
 ## Fonts
-Copy `C:\Windows\Fonts` folder in to the data transfer folder
+### RClone
+Use `rclone` to copy user data if available, as it is multi-threaded (faster) and verifies copied files
+- Open a terminal as Administrator\
+  `wt` or `powershell` or `cmd`
+- Check if `rclone` is installed\
+  `rclone -V`\
+  *( this will show an error if not installed )*
+- If `rclone` not installed:
+	- Install `rclone`\
+	  `winget install rclone.rclone`
+	- Close and re-open the terminal\
+	  *( this will refresh the environment path/variables to make rclone available )*
+- Change in to Data Transfer folder\
+  `cd d:\Job#5000\Data-Transfer_2025-01-21\`
+- Copy `C:\Windows\Fonts` to `Data Transfer folder`\
+  `rclone copy c:\windows\fonts fonts --progress`
+### Windows Explorer
+If `rclone` is unavailable, simply use Windows Explorer, just know it is single-threaded (slower) and does <u>not</u> verify copied files
+- Copy `C:\Windows\Fonts` to `Data Transfer folder` using `Windows Explorer`
+
 ## Desktop
 *naming convention:*\
 `desktop_screenshot.png`\
@@ -286,11 +403,20 @@ Copy `C:\Windows\Fonts` folder in to the data transfer folder
 - Close all programs *( to show only pinned taskbar shortcuts )*
 - Screenshot the entire desktop\
   `Win+Shift+S`
-- Click on the screen shot pop-up
-- Save screenshot to transfer folder
+- Click `Fullscreen snip` on the snipping tool pop-up (4th option)
+- Click the Snipping Tool notification pop-up
+	- Save to `Data Transfer folder`\
+	  `ctrl+s`
+- If the Snipping Tool notification does not pop-up
+	- Open Paint\
+	  `mspaint`
+	- Paste\
+	  `ctrl+v`
+	- Save to `Data Transfer folder`\
+	  `ctrl+s`
 ### Wallpaper
 - Run `%APPDATA%\Microsoft\Windows\Themes`
-- Copy `transcoded`to the transfer folder\
+- Copy `transcoded`to the `Data Transfer folder`\
   *( this is the current transcoded copy of the desktop wallpaper )*
 - Rename the copied `transcoded` to `desktop_wallpaper.jpg`
 
@@ -308,10 +434,14 @@ Copy `C:\Windows\Fonts` folder in to the data transfer folder
 
 ## Passwords
 *naming convention:*\
-`passwords_nirsoft-lostmypassword.html`\
-- Use `Nirsoft LostMyPassword`
-	- Select `Administrator` option
-	- Save as `Horizontal HTML`
+`passwords_nirsoft-lostmypassword.html`
+- Open `Nirsoft LostMyPassword` as Administrator
+	- Select `Search your passwords as Administrator`
+	- Click `OK`
+	- Select all\
+	  `ctrl+a`
+	- Save as `Horizontal HTML` to `Data Transfer folder`\
+	  `ctrl+s`
 
 ## Networking
 _naming convention:_\
