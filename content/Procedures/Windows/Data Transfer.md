@@ -76,7 +76,8 @@ If `rclone` is unavailable, simply use Windows Explorer, just know it is single-
 
 ## Security
 *naming convention:*\
-`security.txt`
+`security.txt`\
+`security_nirsoft-securitysoftview.html`
 
 Create a new text document for noting their security software details
 - Add the name of the security software
@@ -96,6 +97,13 @@ Create a new text document for noting their security software details
 > john.smith@example.com
 > example-password
 > ```
+### Tools
+- Open `Nirsoft SecuritySoftView` as Administrator
+	- Select all\
+	  `ctrl+a`
+	- Save as `Horizontal HTML` in `Data Transfer folder`\
+	  `ctrl+s`
+
 
 ## Web Browsers
 Complete the following exports for each installed web browser
@@ -232,10 +240,10 @@ _naming convention:_\
 	- Save as `Horizontal HTML` to `Data Transfer folder`\
 	  `ctrl+s`
 
-## Emails / Calendars / Contacts
+## Mail Clients
 
 *naming convention:*\
-`email-clients_nirsoft-mail-passview.html`\
+`mail-clients_nirsoft-mail-passview.html`\
 `outlook_export_john.smith@example.com.pst`\
 `outlook-classic.txt`\
 `outlook_profile.reg`
@@ -263,12 +271,18 @@ _naming convention:_\
 > C:\Users\jsmith\AppData\Local\Microsoft\Outlook\archive.pst
 > ```
 #### Outlook Profile
+%% REFERENCE: https://design2web.ca/blog/how-to-backup-restore-your-outlook-profile/ %%
 Export the appropriate Registry keys for the installed Outlook (classic) version as `outlook_profile.reg`
+
+- Open `regedit` as Administrator\
+  `regedit`
+- Navigate to the appropriate registry location (as per table below)
+- Right Click on the `Outlook` key/folder
+- Click `Export`
 
 | Office Version | Outlook Profile Registry Location                                                                           |
 | :------------- | :---------------------------------------------------------------------------------------------------------- |
-| 2007           | HKEY_CURRENT_USER\Software\Microsoft\Windows NT\CurrentVersion\Windows Messaging Subsystem\Profiles\Outlook |
-| 2010           |                                                                                                             |
+| 2007 / 2010    | HKEY_CURRENT_USER\Software\Microsoft\Windows NT\CurrentVersion\Windows Messaging Subsystem\Profiles\Outlook |
 | 2013           | HKEY_CURRENT_USER\Software\Microsoft\Office\15.0\Outlook                                                    |
 | 2016+          | HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\Outlook                                                    |
 #### Exports
@@ -290,11 +304,14 @@ Export the appropriate Registry keys for the installed Outlook (classic) version
 [How to export Contacts in Windows Mail (People App)](https://support.microsoft.com/en-au/office/export-emails-and-contacts-from-windows-mail-or-people-and-import-to-new-outlook-7ced6135-3d1d-409b-b2da-4282a69c151b)
 
 ### Windows Live Mail
+[How to export Contacts in Windows Live Mail](https://oryon.net/knowledge-base/article/how-do-i-export-email-addresses-from-windows-live-mail/)
 
 ### Mozilla Thunderbird
-Profile: `%APPDATA%\Roaming\Thunderbird`
+Profile Location: `%APPDATA%\Roaming\Thunderbird`
+[How to migrate Thunderbird profile to another PC](https://support.mozilla.org/en-US/kb/moving-thunderbird-data-to-a-new-computer)
 
-### EmClient
+### eM Client
+[How to migrate eM Client profile to another PC](https://forum.emclient.com/t/transfer-em-from-one-pc-to-another/58064/9)
 
 ### Tools
 - Open `Nirsoft Mail PassView` as Administrator
@@ -442,6 +459,31 @@ If `rclone` is unavailable, simply use Windows Explorer, just know it is single-
 	  `ctrl+a`
 	- Save as `Horizontal HTML` to `Data Transfer folder`\
 	  `ctrl+s`
+- Open `Nirsoft Password Security Scanner` as Administrator
+	- Select all\
+	  `ctrl+a`
+	- Save as `Horizontal HTML` to `Data Transfer folder`\
+	  `ctrl+s`
+- Open `Nirsoft CredentialsFileView` as Administrator
+	- Select all\
+	  `ctrl+a`
+	- Save as `Horizontal HTML` to `Data Transfer folder`\
+	  `ctrl+s`
+- Open `Nirsoft VaultPasswordView` as Administrator
+	- Select all\
+	  `ctrl+a`
+	- Save as `Horizontal HTML` to `Data Transfer folder`\
+	  `ctrl+s`
+	  
+
+## Drives
+*naming convention:*\
+`drives_nirsoft-driveletterview.html`
+- Open `Nirsoft DriveLetterView` as Administrator
+	- Select all\
+	  `ctrl+a`
+	- Save as `Horizontal HTML` to `Data Transfer folder`\
+	  `ctrl+s`
 
 ## Networking
 _naming convention:_\
@@ -454,6 +496,16 @@ _naming convention:_\
 	  `ctrl + a`
 	- Save as `Horizontal HTML`\
 	  `ctrl + s`
+- Open `Nirsoft Remote Desktop PassView` as Administrator
+	- Select All\
+	  `ctrl + a`
+	- Save as `Horizontal HTML`\
+	  `ctrl + s`
+- Open `Nirsoft VNCPassView` as Administrator
+	- Select All\
+	  `ctrl + a`
+	- Save as `Horizontal HTML`\
+	  `ctrl + s
 ### Interfaces
 - Open `Nirsoft NetworkInterfacesView` as Administrator
 	- Select All\
@@ -462,9 +514,9 @@ _naming convention:_\
 	  `ctrl + s`
 ### Wi-Fi Keys
 - Open `Nirsoft WirelessKeyView` as Administrator
-- Click `File`
-- Click `Export All`
-- Save export to transfer folder
+	- Click `File`
+	- Click `Export All`
+	- Save export to transfer folder
 ## Other
 - Check C: Drive for unusual files/folders to transfer\
   _copy to Job folder copying the C: Drive file structure\
@@ -554,7 +606,8 @@ _naming convention:_\
 
 # Prepare New Device *( if required )*
 
-- **Create a Local Account during Windows 10/11 Out of Box Experience ( OOBE )**
+## OOBE
+Create a Local Account during Windows 10/11 Out of Box Experience ( OOBE )
 - **Option 1: No Internet Connected**\
   Bypass Network Registration
 	- _Open Command Prompt:_ `Shift+F10` _( may require pressing `Fn` on some devices )_
@@ -594,9 +647,11 @@ _naming convention:_\
  >   Run `ms-windows-store://pdp/?productid=BF712690PMLF&OCID=windowssmodesupportpage`
  > - Follow the prompts to Switch Out of S Mode\
  >   *this will change the Windows edition installed to Windows 10/11 Home or Pro as per it's installed license*
-- **Configure System Restore**
-- **Check installed Windows' Edition**
-  - _Run_ `winver`
+## Setup Device
+- **Configure System Restore**\
+  enable on C:\ with 7% allocation
+- **Check installed Windows' Edition**\
+  `winver`
 - **Create a new System Restore point**\
   `COPS - Fresh Windows 10/11 Home/Pro Install`\
   ( use 10 or 11 and Home or Pro as per `winver` )
@@ -607,17 +662,17 @@ _naming convention:_\
   `ms-settings:activation?activationSource=SMC-Article-12440`
 - **Configure Time/Date**
 - **Configure Windows Update**
-  - Open Windows Update\
+- Open Windows Update\
     Run `control update`
-  - Click `Resume updates` if updates are currently paused
-  - Disable `Get the latest updates as soon as they're available`
-  - Advanced options
-    - Enable `Receive update for other Microsoft products`
-    - Disable `Get me up to date`
-    - Enable `Notify me when a restart is required to finish updating`
-    - Delivery Optimization
-      - Enable `Allow downloads from other devices`
-        - Select `Devices on my local network`
+- Click `Resume updates` if updates are currently paused
+- Disable `Get the latest updates as soon as they're available`
+- Advanced options
+	- Enable `Receive update for other Microsoft products`
+	- Disable `Get me up to date`
+	- Enable `Notify me when a restart is required to finish updating`
+	- Delivery Optimization
+	- Enable `Allow downloads from other devices`
+		- Select `Devices on my local network`
 - **Update Microsoft Store Apps**
 	- Open Microsoft Store\
 	  `ms-windows-store:`
@@ -625,9 +680,9 @@ _naming convention:_\
 		- Click `Check for updates`
 		- Click `Update all`
 - **Update Winget Apps**\
-  - Open a Terminal\
-    `wt` or `powershell` or `cmd`
-  - Run the following commands:
+	- Open a Terminal\
+	  `wt` or `powershell` or `cmd`
+	- Run the following commands:
     ```batch
     winget source update
     winget upgrade --all --silent
@@ -638,29 +693,32 @@ _naming convention:_\
   `"C:\Program Files\Common Files\microsoft shared\ClickToRun\OfficeC2RClient.exe" /update user forceappshutdown=true`
 - **Check Drivers**\
   Bangs(!) exclamation marks in Device Manager indicates missing, incorrect, or corrupt drivers
-  - Open `Device Manager` to check for Bangs(!)
-  - Run `Snappy Driver Installer Origin (SDIO)` as an Administrator
-  - Select `TODO: Create a new system restore point`
-  - Select all missing/incorrect/corrupt drivers (as per bangs! in Device Manager)
-  - Click `Install`
-- **[ <font style="color:ORANGE">OPTIONAL</font> ] Update Outdated Drivers**
+	- Open `Device Manager` to check for Bangs(!)
+	- Run `Snappy Driver Installer Origin (SDIO)` as an Administrator
+	- Select `Create a new system restore point`
+	- Select all missing/incorrect/corrupt drivers (as per bangs! in Device Manager)
+	- Click `Install`
+	- [ <font style="color:ORANGE">OPTIONAL</font> ] Update Outdated Drivers
 - **Verify Drivers**
+	- **Turn On Windows Verifier:**
+		- Run `verifier`
+		- Select `Create standard settings`
+		- Click `Next`
+		- Select `Automatically select all drivers on this computer`
+		- Click `Finish`
+		- Restart Windows\
+		  `shutdown -r -f -t 00`
+	  - **Turn Off Windows Verifier:**
+		- Run `verifier`
+		- Select `Delete existing settings`
+		- Click `Finish`
+		- Restart Windows\
+		  `shutdown -r -f -t 00`
 >[!info]- How Verifier works
 >- Windows Verifier works by stressing out drivers as they're loaded (it is expected that the computer's performance will be impacted while verifier is enabled)
 >- If Windows loads into the desktop OK and does not crash with Verifier enabled, then all is good and you can proceed to turn it off
 >- If Verifier induces a crash, Windows should produce a Blue Screen of Death (BSOD) with a STOP Code error and information on the driver that crashed, you can use this information to identify the faulty driver that caused the crash and replace it
-  - **Turn On Windows Verifier:**
-    - Run `verifier`
-    - Select `Create standard settings`
-    - Click `Next`
-    - Select `Automatically select all drivers on this computer`
-    - Click `Finish`
-    - Restart Windows `shutdown -r -f -t 00`
-  - **Turn Off Windows Verifier:**
-    - Run `verifier`
-    - Select `Delete existing settings`
-    - Click `Finish`
-    - Restart Windows `shutdown -r -f -t 00`
+
 
 # Restore
 
@@ -672,6 +730,8 @@ _naming convention:_\
 	- Change the group of these new accounts to `Administrator` as per the old device
 - Log in and out of each of these new user accounts\
   *( this lets Windows setup the new user profiles for us to update )*
+	- Check that each new user account has Administrator permissions as expected\
+	  *try to open a terminal as Administrator, see if it asks you to log in as an Administrator*
 
 ## User Profiles
 - Log in to the `COPS` user account
@@ -680,31 +740,80 @@ _naming convention:_\
 	- If there was data in the `OneDrive` folder on the old device and you can't sign back in to it on the new machine, then copy the contents of the `OneDrive` folder in to the User Profile directly
 
 ## Programs
+- Log in to the new User account\
+  *( some programs are installed to the current user )*
 - Import winget export from old device\
   `winget import winget.json`
 - Go through `winget_unavailable.txt` and manually install any missed programs as required\
-  `winget search xxxx` or search internet for installers
+  `winget search program-name` or search internet for installers
+- Activate programs as required\
+  *Office apps, Security apps, etc..*
 
-## other
-- **Copy over any C: Drive files/folders that were backed up**
-- **Printer Drivers**
-  - If you can not install the printer drivers + software without the printer present, save the printer package installer to `C:\COPS\` and create a shortcut to it on the customer's desktop
-- **Check Web Browsers and restore Bookmarks and Passwords from backups as required**
-- **Activate software using extracted keys or accounts as required**
-- **Configure email accounts as required**
-- **Install additional drivers as required**
-- **Move any USB Dongles from the old device (Wireless mice, wifi, blue adapters, etc...)**
-- **Update Apps**\
-  via `Microsoft Store`\
-  via `Winget`
-- **Update Windows**
-- **Update Office apps** (if installed)
-- **Restart Windows**
-- **Remove 'COPS' user account**
-  - Run `netplwiz` - Select `COPS` - Click `Remove`
-  - Delete `C:\Users\COPS\` folder\
-  _Windows may prevent you from removing this folder if it's currently accessing it in the background, if this happens just restart Windows and try to remove it again_
-  - Empty Recycle Bin
+## Web Browsers
+### Sync
+Sign in to the customer's sync accounts if available for all web browsers
+### Manual
+If not using Sync, manually import customer's data for all web browsers\
+*( Bookmarks, Passwords, Extensions )*
+
+## Mail Clients
+- Restore Mail Client Profiles if available\
+  `outlook_profile.reg` or backed up Thunderbird profile, etc..
+- Manually re-set up mail clients/accounts as required
+	- Import old emails
+	- Import contacts as required
+
+## Printers
+*naming convention:*\
+`Install Printer (Canon TR8600 series).ink`
+
+Most printers can not be installed without the printer present/connection, especially networked printers.\
+So we make the installers available for the user to install themselves when they're back on site with their printer(s).
+
+- Copy printer installers folder to `C:\COPS\printers\`
+- Create shortcuts to each printer installer in `C:\Users\Public\Desktop\`\
+  *( this will make the shortcuts appear on every user's desktop )*
+	- Move the shortcuts to the top right of the new user account's desktop if possible\
+	  *( making it easy for the user to find the installers )*
+
+## Other
+- Copy over any C: Drive files/folders that were backed up\
+  *( also do so for any other drive letters that were backed up )*
+
+## Hardware
+- Move any USB Dongles across from the old PC to this new PC\
+  *( Wireless Mouse/Keyboard Dongles, Wi-Fi Adapaters, Bluetooth Adapters, etc.. )*
+	- Install additional drivers as required\
+	  `SDIO`
+## Updates
+- Update Apps\
+	- Microsoft Store\
+	  `ms-windows-store:`
+	- Winget
+	  ```
+	  winget source update
+	  winget upgrade --all --silent
+	  ```
+- Update Windows\
+  `control update`
+- Update Office apps (if installed)\
+  `"C:\Program Files\Common Files\microsoft shared\ClickToRun\OfficeC2RClient.exe" /update user`
+## Cleanup
+- Restart Windows\
+  `shutdown -r -f -t 00`
+- Log in to the new User account (that's an Administrator)
+- Remove the `COPS` user account
+	- Run `netplwiz`
+	- Select `COPS`
+	- Click `Remove`
+	- Delete `C:\Users\COPS` folder\
+	  *( Windows may prevent you from removing this folder if it's currently accessing it in the background, if this happens just restart Windows and try to remove it again )*
+- Empty `Recycle Bin`
+- Disk Cleanup
+	- Configure `Disk Cleanup Tool`\
+	  `cleanmgr /sageset:10`
+	- Run `Disk Cleanup Tool`\
+	  `cleanmgr /sagerun:10`
 ## System Maintenance/Repair
   - Open a Terminal as Administrator\
     `wt` or `powershell` or `cmd`
@@ -723,8 +832,8 @@ _naming convention:_\
 >[!tip]- Useful Tip
 >You can queue up multiple commands in PowerShell by pressing `Shift+Enter` to add a new line before pressing `Enter` to execute the all of the queued up commands one after another
 
-- **Restart Windows**
-- **Create a new System Restore point**\
+- Restart Windows
+- Create a new System Restore point\
   `COPS - Completed Data Transfer`
 
 
