@@ -1,6 +1,6 @@
 ---
 title: Miscellaneous
-updated: 2025-09-07
+updated:
 tags:
   - miscellaneous
 ---
