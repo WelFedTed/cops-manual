@@ -122,26 +122,26 @@ tags:
 - Restart Windows\
   `shutdown /r /f /t 00`
 
-## How to Reset Hibernation File (hiberfil.sys) (Windows)
+# How to Reset Hibernation File (hiberfil.sys) (Windows)
 
 %% Reference: https://learn.microsoft.com/en-us/troubleshoot/windows-client/setup-upgrade-and-drivers/disable-and-re-enable-hibernation %%
 
 Windows uses the hiberfil.sys file to store a copy of the system memory on the hard disk when the hybrid sleep setting is turned on. If this file is not present, the computer cannot hibernate.
 > [!info]- More Info
 > The hiberfil.sys hidden system file is located in the root folder of the drive where the operating system is installed. The Windows Kernel Power Manager reserves this file when you install Windows. The size of this file is approximately equal to how much random access memory (RAM) is installed on the computer.
-### Disable Hibernation
+## Disable Hibernation
 
 `powercfg -h off`\
 or\
 `powercfg.exe /hibernate off`
 
-### Re-Enable Hibernation
+## Re-Enable Hibernation
 
 `powercfg -h on`\
 or\
 `powercfg.exe /hibernate on`
 
-## How to Install / Repair Winget
+# How to Install / Repair Winget
 
 %% Reference: https://github.com/asheroto/winget-install  %%
 
@@ -185,3 +185,52 @@ echo:
 goto :loop
 ```
 
+# How to check Wi-Fi signal strength
+> [!info] What is RSSI
+> RSSI stands for Received Signal Strength Indicator and measures how well a client device can hear (receive) a signal.
+> The greater the RSSI value, the stronger the signal.
+> Therefore, when an RSSI value is represented in a negative form (e.g. −100), the closer the value is to 0, the stronger the received signal is.
+> RSSI values are similar to taking a dBm (decibel milliwatt) reading, but RSSI values are not actually in decibels.
+> 
+> There is no standardization or RSSI values, so wireless adapters from different manufacturers could be using different RSSI scales.
+> But as a rough guide refer to the following:
+> - Excellent signal (> -70)
+> - Good signal (-70 to -85)
+> - Fair signal (-86 to -100)
+> - Poor signal (< -100)
+## Windows
+- Open a terminal\
+  `wt` or `powershell` or `cmd`
+- Run this command:\
+  `netsh wlan show interfaces`
+- Check the reported `RSSI` value of the current wireless connection
+## macOS
+- Open `Wireless Diagnostics`\
+  Press and hold the `Option` key, click the `Wi-Fi` status menu in the menu bar, then choose `Open Wireless Diagnostics`.
+- Click on `Window` in the Title Bar
+- Click `Scan` from the drop down menu.\
+  *You'll see a list of all of the **Wireless Access Points** in your area*
+- Click `Scan Now`
+- Check the reported `RSSI` value of the target wireless network
+## Tools
+ Use MetaGeek's tools\
+ https://www.metageek.com/downloads/
+### MetaGeek inSSIDer
+- Scan nearby networks
+- Check the `Signal` value reported in dBm
+> [!info] What is dBm
+> dBm stands for Decibel (milliwatts) and measures the strength of a signal.
+> While RSSI is a relative measurement that changes between chip manufacturers, dBm is an absolute measurement (this is strongly preferred).
+> 
+> dBm is a logarithmic scale (usually -30 to -100), and thus the following is true:
+> - 3 dB of loss = -3 dB = halves signal strength
+> - 3 dB of gain = +3 dB = doubles signal strength
+> - 10 dB of loss = -10 dB = 10 times less signal strength
+> - 10 dB of gain = +10 dB = 10 times more signal strength
+>
+>General signal strength guide:
+>- Excellent signal (-30 dBm) *this is the maximum strength signal*
+>- Strong signal (-67 dBm)
+>- Good signal (-70 dBm)
+>- Poor signal (-80 dBm) *connection may be unstable*
+>- Bad signal (-90 dBm) *basically unusable*
