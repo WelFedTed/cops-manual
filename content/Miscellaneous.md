@@ -186,7 +186,7 @@ goto :loop
 ```
 
 # How to check Wi-Fi signal strength
-> [!info] What is RSSI
+> [!info]- What is RSSI
 > RSSI stands for Received Signal Strength Indicator and measures how well a client device can hear (receive) a signal.
 > The greater the RSSI value, the stronger the signal.
 > Therefore, when an RSSI value is represented in a negative form (e.g. −100), the closer the value is to 0, the stronger the received signal is.
@@ -218,9 +218,10 @@ goto :loop
 ### MetaGeek inSSIDer
 - Scan nearby networks
 - Check the `Signal` value reported in dBm
-> [!info] What is dBm
-> dBm stands for Decibel (milliwatts) and measures the strength of a signal.
-> While RSSI is a relative measurement that changes between chip manufacturers, dBm is an absolute measurement (this is strongly preferred).
+> [!info]- What is dBm
+> dBm stands for Decibel (milliwatts) and measures the strength of a signal.\
+> While RSSI is a relative measurement that changes between chip manufacturers,\
+> dBm is an absolute measurement (this is strongly preferred).
 > 
 > dBm is a logarithmic scale (usually -30 to -100), and thus the following is true:
 > - 3 dB of loss = -3 dB = halves signal strength
