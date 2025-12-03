@@ -52,28 +52,6 @@ tags:
 > i.e. `winget export -o "My Winget Export.json"`\
 > vs. `winget export -o my-winget-export.json`
 
-## User Profiles
-
-### RClone
-Use `rclone` to copy user data if available, as it is multi-threaded (faster) and verifies copied files
-- Open a terminal as Administrator\
-  `wt` or `powershell` or `cmd`
-- Check if `rclone` is installed\
-  `rclone -V`\
-  *( this will show an error if not installed )*
-- If `rclone` not installed:
-	- Install `rclone`\
-	  `winget install rclone.rclone`
-	- Close and re-open the terminal\
-	  *( this will refresh the environment path/variables to make rclone available )*
-- Change in to Data Transfer folder\
-  `cd d:\Job#5000\Data-Transfer_2025-01-21\`
-- Copy `C:\Users` to `Data Transfer folder`\
-  `rclone copy c:\users users --progress`
-### Windows Explorer
-If `rclone` is unavailable, simply use Windows Explorer, just know it is single-threaded (slower) and does <u>not</u> verify copied files
-- Copy `C:\Users` to `Data Transfer folder` using `Windows Explorer`
-
 ## Security
 *naming convention:*\
 `security.txt`\
@@ -97,13 +75,39 @@ Create a new text document for noting their security software details
 > john.smith@example.com
 > example-password
 > ```
-### Tools
-- Open `Nirsoft SecuritySoftView` as Administrator
-	- Select all\
-	  `ctrl+a`
-	- Save as `Horizontal HTML` in `Data Transfer folder`\
-	  `ctrl+s`
 
+## Data Transfer Backup Script
+You can now use the work-in-progress Data Transfer Backup Script to automate much of the backup process now, and then check the output against the backup instructions here to fill in any gaps that the script may have missed
+- Disable any security app's real-time protection *(if you haven't already)*
+- Open a terminal as Administrator\
+  `wt` or `powershell` or `cmd`
+- Change in to Data Transfer folder\
+  `cd d:\Job#5000\Data-Transfer_2025-01-21\`
+- Download the [Data Transfer Backup Script](https://raw.githubusercontent.com/WelFedTed/Technician/refs/heads/main/USB-Tool_Scripts/DataTransfer_Backup.cmd)\
+  `curl https://tinyurl.com/data-transfer-backup -o DataTransfer_Backup.cmd`
+- Run the Data Transfer Script\
+  `.\DataTransfer_Backup.cmd`
+## User Profiles
+
+### RClone
+Use `rclone` to copy user data if available, as it is multi-threaded (faster) and verifies copied files
+- Open a terminal as Administrator\
+  `wt` or `powershell` or `cmd`
+- Check if `rclone` is installed\
+  `rclone -V`\
+  *( this will show an error if not installed )*
+- If `rclone` not installed:
+	- Install `rclone`\
+	  `winget install rclone.rclone`
+	- Close and re-open the terminal\
+	  *( this will refresh the environment path/variables to make rclone available )*
+- Change in to Data Transfer folder\
+  `cd d:\Job#5000\Data-Transfer_2025-01-21\`
+- Copy `C:\Users` to `Data Transfer folder`\
+  `rclone copy c:\users users --progress`
+### Windows Explorer
+If `rclone` is unavailable, simply use Windows Explorer, just know it is single-threaded (slower) and does <u>not</u> verify copied files
+- Copy `C:\Users` to `Data Transfer folder` using `Windows Explorer`
 
 ## Web Browsers
 Complete the following exports for each installed web browser
