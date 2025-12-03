@@ -87,6 +87,9 @@ You can now use the work-in-progress Data Transfer Backup Script to automate muc
   `curl https://tinyurl.com/data-transfer-backup -o DataTransfer_Backup.cmd`
 - Run the Data Transfer Script\
   `.\DataTransfer_Backup.cmd`
+> [!warning] Warning
+> The Data Transfer Backup Script may cause crashes on systems with very little available memory, as the script opens many processes concurrently.\
+> ( currently think the script needs ~2GB available )
 ## User Profiles
 
 ### RClone
