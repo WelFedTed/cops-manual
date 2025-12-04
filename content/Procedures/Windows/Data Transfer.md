@@ -384,7 +384,6 @@ Profile Location: `%APPDATA%\Roaming\Thunderbird`\
 	  `ctrl+a`
 	- Save as `Horizontal HTML` to `Data Transfer folder`\
 	  `ctrl+s`
-
 ## Office
 *naming convention:*\
 `office.txt`
@@ -522,7 +521,8 @@ _naming convention:_\
 ### Wi-Fi Keys
 - Open `Nirsoft WirelessKeyView` as Administrator
 	- Click `File`
-	- Click `Export All`
+	- Click `Export All`\
+	  `Shift+CTRL+E`
 	- Save export to transfer folder
 ## Other
 - Check C: Drive for unusual files/folders to transfer\
@@ -783,13 +783,21 @@ So we make the installers available for the user to install themselves when they
 	- Move the shortcuts to the top right of the new user account's desktop if possible\
 	  *( making it easy for the user to find the installers )*
 
+## Wi-Fi Keys
+- Open `Nirsoft WirelessKeyView` as Administrator
+	- Click `File`
+	- Click `Import Keys from Export File`\
+	  `Ctrl+I`
+	- Browse to and select the wireless networks export in the Transfer Folder\
+	  `wireless-networks_nirsoft-wirelesskeyview.txt`
+	- Click `Open`
 ## Other
 - Copy over any C: Drive files/folders that were backed up\
   *( also do so for any other drive letters that were backed up )*
 
 ## Hardware
 - Move any USB Dongles across from the old PC to this new PC\
-  *( Wireless Mouse/Keyboard Dongles, Wi-Fi Adapaters, Bluetooth Adapters, etc.. )*
+  *( Wireless Mouse/Keyboard Dongles, Wi-Fi Adapters, Bluetooth Adapters, etc.. )*
 	- Install additional drivers as required\
 	  `SDIO`
 ## Updates
