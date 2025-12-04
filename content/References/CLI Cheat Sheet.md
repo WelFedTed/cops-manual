@@ -53,7 +53,10 @@ Get-WindowsImage -ImagePath F:\sources\install.wim /Index:1
 ```
 ### Add Drivers
 #### Online
-*DISM requires Windows to be Offline to add drivers, use PnPUtil instead*
+```powershell
+cd c:\drivers\
+pnputil /add-driver *.inf /subdirs /install
+```
 #### Offline
 ```powershell
 DISM /Image:C:\mount\ /Add-Driver /Driver:c:\drivers\ /Recurse /ForceUnsigned
