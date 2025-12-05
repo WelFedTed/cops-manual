@@ -144,7 +144,7 @@ sfc /scannow
 ```
 ## Scan Offline Windows
 ```batch
-sfc /scannow /offbootdir:D:\ /offwindir:D:\Windows
+sfc /scannow /offbootdir=D:\ /offwindir=D:\Windows
 ```
 
 # Winget
