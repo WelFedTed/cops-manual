@@ -235,3 +235,30 @@ goto :loop
 >- Good signal (-70 dBm)
 >- Poor signal (-80 dBm) *connection may be unstable*
 >- Bad signal (-90 dBm) *basically unusable*
+
+# How to check Windows Version / Edition
+## Online
+- Run `winver`
+## Offline
+### ntdll.dll
+- Open `Explorer`
+- Navigate to `:\Windows\System32`
+- Open `Properties` of `ntdll.dll`
+- Click `Details` tab
+- Check `File version`\
+  *this version number should represent the installed Windows Build Number, use Google to help identify the build number if you're unsure which version it is*
+### Registry
+- Open `Registry Editor`\
+  `regedit`
+- Expand `Computer`
+	- Select `HKEY_LOCAL_MACHINE`
+- Click `File`
+	- Click `Load Hive...`
+	- Open the `SOFTWARE` registry hive of the target offline Windows installation
+	- Enter `OFFLINE_SOFTWARE` as Key Name
+	- Click `OK`
+- Navigate to `HKEY_LOCAL_MACHINE\OFFLINE_SOFTWARE\Microsoft\Windows NT\CurrentVersion`
+	- Check the following registry entries:
+	  `CurrentBuidl`\
+	  `EditionID`\
+	  `ProductName`
