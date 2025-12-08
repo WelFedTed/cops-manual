@@ -258,7 +258,7 @@ goto :loop
 	- Enter `OFFLINE_SOFTWARE` as Key Name
 	- Click `OK`
 - Navigate to `HKEY_LOCAL_MACHINE\OFFLINE_SOFTWARE\Microsoft\Windows NT\CurrentVersion`
-	- Check the following registry entries:
-	  `CurrentBuidl`\
+	- Check the following registry entries:\
+	  `CurrentBuild`\
 	  `EditionID`\
 	  `ProductName`
