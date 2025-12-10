@@ -18,6 +18,25 @@ tags:
 Wireless device to device transfer during OOBE.
 
 *We refer to this transfer method as a "Bonk" as you 'bonk' the phones together to complete the transfer.*
+### Use a Wired Connection
+%% reference: https://support.apple.com/en-au/117383?device-type=iphone %%
+Apple Quick Start is typically a wireless transfer method, but Apple does support using a cable too.\
+> [!tip] Useful if completing multiple iPhone data transfers next to each other
+> A wired connection may not always be faster, as most iPhones only support USB 2.0 transfer speeds, but it could be very useful if you're doing multiple Quick Start ("Bonk") data transfers next to each other, as their Bluetooth connections will slow down if transferring too close to each other
+- Make sure both iPhones are charged up\
+  *don't use this method if either iPhone has an unreliable battery*
+- Restart both iPhones
+- Disable Bluetooth on the Source iPhone\
+  *this is to ensure the transfer initializes via the cable and not Bluetooth like normal*
+- Connect both iPhones together with a good cable *(that supports data)*\
+  *via USB-C to USB-C cable*\
+  *or USB-C to Lighting cable*\
+  *or USB-A to Lightning cable + [Apple Lightning to USB 3 Camera Adapter](https://www.apple.com/shop/product/mx5j3am/a/lightning-to-usb-3-camera-adapter)*
+- Complete the on-screen prompts on the Target iPhone until you reach the Quick Start setup page\
+  *this iPhone should now be looking for nearby iPhones to transfer from*
+- Lock the Source iPhone and wake up the screen without unlocking\
+  *you should now see a Quick Start setup notification on the Source iPhone's screen*
+- Tap the Quick Start setup notification on the Source iPhone and proceed like normal
 
 ## Apple Software
 
