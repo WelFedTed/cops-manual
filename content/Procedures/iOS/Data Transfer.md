@@ -37,7 +37,7 @@ Apple Quick Start is typically a wireless transfer method, but Apple does suppor
 - Lock the Source iPhone and wake up the screen without unlocking\
   *you should now see a Quick Start setup notification on the Source iPhone's screen*
 - Tap the Quick Start setup notification on the Source iPhone and proceed like normal
-> [!tip] USB-C Reverse Charging
+> [!warning] USB-C Reverse Charging
 > One iPhone may start charging from the other iPhone when connected.
 > If the battery running out during the transfer is a concern, you may want to use a wireless charger on the iPhone that's being drained.
 > 
