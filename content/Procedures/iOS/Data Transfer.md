@@ -41,7 +41,7 @@ Apple Quick Start is typically a wireless transfer method, but Apple does suppor
 > One iPhone may start charging from the other iPhone when connected.
 > If the battery running out during the transfer is a concern, you may want to use a wireless charger on the iPhone that's being drained.
 > 
-> *i.e. USB-C to Lighting cable*
+> *i.e. USB-C to Lighting cable*\
 > *The Lightning iPhone will charge from the USB-C iPhone, so put the USB-C iPhone on a wireless charging pad to try and mitigate the extra battery drain*
 
 ## Apple Software
