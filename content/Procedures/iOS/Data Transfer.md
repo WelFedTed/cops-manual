@@ -23,7 +23,7 @@ Wireless device to device transfer during OOBE.
 Apple Quick Start is typically a wireless transfer method, but Apple does support using a cable too.\
 > [!tip] Useful if completing multiple iPhone data transfers next to each other
 > A wired connection may not always be faster, as most iPhones only support USB 2.0 transfer speeds, but it could be very useful if you're doing multiple Quick Start ("Bonk") data transfers next to each other, as their Bluetooth connections will slow down if transferring too close to each other
-- Make sure both iPhones are charged up\
+- Make sure both iPhones are fully charged\
   *don't use this method if either iPhone has an unreliable battery*
 - Restart both iPhones
 - Disable Bluetooth on the Source iPhone\
