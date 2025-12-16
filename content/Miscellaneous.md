@@ -281,6 +281,8 @@ goto :loop
 - Open a terminal as Administrator\
   `wt` or `powershell` or `cmd`
 - Run [MAS (Microsoft Activation Scripts)](https://massgrave.dev/)\
-  `irm https://get.activated.win | iex`
+```powershell
+  irm https://get.activated.win | iex
+```
 - Press `3` for `TSForge`
 - Press `2` for `Activate - ESU`
