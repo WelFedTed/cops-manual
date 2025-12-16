@@ -262,3 +262,25 @@ goto :loop
 	  `CurrentBuild`\
 	  `EditionID`\
 	  `ProductName`
+
+# Windows 10 ESU (Extended Security Updates)
+## Check Enrolled Status
+- Run `slmgr.vbs /dli`
+- Check for the following:\
+  `Windows(R), Client-ESU-Year1 add-on`\
+  `Windows(R), Client-ESU-Year2 add-on`\
+  `Windows(R), Client-ESU-Year3 add-on`\
+  `Windows(R), Client-ESU-Year6 add-on`
+## Enrol
+### Official
+- Open `Windows Update`\
+  `control update`
+- Click `Enroll Now`
+	- Follow the prompts to enrol *(may require a Microsoft Account)*
+### Unofficial
+- Open a terminal as Administrator\
+  `wt` or `powershell` or `cmd`
+- Run [MAS (Microsoft Activation Scripts)](https://massgrave.dev/)\
+  `irm https://get.activated.win | iex`
+- Press `3` for `TSForge`
+- Press `2` for `Activate - ESU`
