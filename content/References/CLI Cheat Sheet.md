@@ -98,6 +98,12 @@ Dismount-WindowsImage -Path C:\mount\ –Save
 Dismount-WindowsImage -Path C:\mount\ –Discard
 ```
 
+### Apply Image
+%% reference: https://www.tenforums.com/tutorials/84331-apply-windows-image-using-dism-instead-clean-install.html %%
+```powershell
+DISM /Apply-Image /ImageFile:F:\sources\install.wim /Index:1 /ApplyDir:G:\
+G:\Windows\System32\bcdboot G:\Windows
+```
 # GPUpdate
 Group Policy Update
 ## Force Update Group Policy
