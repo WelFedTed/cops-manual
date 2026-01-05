@@ -265,7 +265,10 @@ goto :loop
 
 # Windows 10 ESU (Extended Security Updates)
 ## Check Enrolled Status
-- Run `slmgr.vbs /dli`
+- Run
+```powershell
+  slmgr.vbs /dli
+```
 - Check for the following:\
   `Windows(R), Client-ESU-Year1 add-on`\
   `Windows(R), Client-ESU-Year2 add-on`\
@@ -280,7 +283,7 @@ goto :loop
 ### Unofficial
 - Open a terminal as Administrator\
   `wt` or `powershell` or `cmd`
-- Run [MAS (Microsoft Activation Scripts)](https://massgrave.dev/)\
+- Run [MAS (Microsoft Activation Scripts)](https://massgrave.dev/)
 ```powershell
   irm https://get.activated.win | iex
 ```
