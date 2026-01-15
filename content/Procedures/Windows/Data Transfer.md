@@ -210,14 +210,23 @@ _naming convention:_\
 - Open a Terminal as Administrator\
   Run `wt` or `powershell` or `cmd`
 - Change in to Data Transfer folder\
-  `cd d:\Job#5000\Data-Transfer_2025-01-21\`
+```powershell
+cd d:\Job#5000\Data-Transfer_2025-01-21\
+```
 - Check Winget is installed\
-  `winget -v` (this will throw an error if winget is unavailable)
+  (this will throw an error if winget is unavailable)
+```powershell
+winget -v
+```
 - Update Winget `winget source update`
 - Export Winget's list of installed programs\
-  `winget export -o winget.json`
+```powershell
+winget export -o winget.json
+```
 - Export a list of all programs that the Winget export will not re-install\
-  `winget export -o winget.json > winget_unavailable.txt`
+```powershell
+winget export -o winget.json > winget_unavailable.txt
+```
 ### Tools
 - Open `Nirsoft InstalledAppView` as Administrator
 	- Select all\
