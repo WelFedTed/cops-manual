@@ -712,7 +712,9 @@ Create a Local Account during Windows 10/11 Out of Box Experience ( OOBE )
 - **Update Windows**\
   `control update`
 - **Update Office apps**\
-  `"C:\Program Files\Common Files\microsoft shared\ClickToRun\OfficeC2RClient.exe" /update user forceappshutdown=true`
+```powershell
+"C:\Program Files\Common Files\microsoft shared\ClickToRun\OfficeC2RClient.exe" /update user forceappshutdown=true
+```
 - **Check Drivers**\
   Bangs(!) exclamation marks in Device Manager indicates missing, incorrect, or corrupt drivers
 	- Open `Device Manager` to check for Bangs(!)
