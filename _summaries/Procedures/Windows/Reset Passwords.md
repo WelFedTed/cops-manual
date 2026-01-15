@@ -1,0 +1,9 @@
+# Method 1: Tools
+## Medicat
+## PC Unlocker
+# Method 2: Manual
+## Exploit Utilman.exe
+## Create Temporary Local Admin Account
+## Reset User Password
+## Remove Temporary Local Admin Account
+## Restore Utilman.exe
