@@ -209,7 +209,7 @@ _naming convention:_\
 ### Winget
 - Open a Terminal as Administrator\
   Run `wt` or `powershell` or `cmd`
-- Change in to Data Transfer folder\
+- Change in to Data Transfer folder
 ```powershell
 cd d:\Job#5000\Data-Transfer_2025-01-21\
 ```
@@ -219,11 +219,11 @@ cd d:\Job#5000\Data-Transfer_2025-01-21\
 winget -v
 ```
 - Update Winget `winget source update`
-- Export Winget's list of installed programs\
+- Export Winget's list of installed programs
 ```powershell
 winget export -o winget.json
 ```
-- Export a list of all programs that the Winget export will not re-install\
+- Export a list of all programs that the Winget export will not re-install
 ```powershell
 winget export -o winget.json > winget_unavailable.txt
 ```
@@ -711,7 +711,7 @@ Create a Local Account during Windows 10/11 Out of Box Experience ( OOBE )
     ```
 - **Update Windows**\
   `control update`
-- **Update Office apps**\
+- **Update Office apps**
 ```powershell
 "C:\Program Files\Common Files\microsoft shared\ClickToRun\OfficeC2RClient.exe" /update user forceappshutdown=true
 ```
