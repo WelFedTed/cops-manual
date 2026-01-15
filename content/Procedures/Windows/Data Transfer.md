@@ -81,12 +81,18 @@ You can now use the work-in-progress Data Transfer Backup Script to automate muc
 - Disable any security app's real-time protection *(if you haven't already)*
 - Open a terminal as Administrator\
   `wt` or `powershell` or `cmd`
-- Change in to Data Transfer folder\
-  `cd d:\Job#5000\Data-Transfer_2025-01-21\`
-- Download the [Data Transfer Backup Script](https://raw.githubusercontent.com/WelFedTed/Technician/refs/heads/main/USB-Tool_Scripts/DataTransfer_Backup.cmd)\
-  `curl https://tinyurl.com/data-transfer-backup -o DataTransfer_Backup.cmd`
+- Change in to Data Transfer folder
+```powershell
+cd d:\Job#5000\Data-Transfer_2025-01-21\
+```
+- Download the [Data Transfer Backup Script](https://raw.githubusercontent.com/WelFedTed/Technician/refs/heads/main/USB-Tool_Scripts/DataTransfer_Backup.cmd)
+```powershell
+curl https://tinyurl.com/data-transfer-backup -o DataTransfer_Backup.cmd
+```
 - Run the Data Transfer Script\
-  `.\DataTransfer_Backup.cmd`
+```powershell
+.\DataTransfer_Backup.cmd
+```
 > [!warning] Warning
 > The Data Transfer Backup Script may cause crashes on systems with very little available memory, as the script opens many processes concurrently.\
 > ( currently think the script needs ~2GB available )
