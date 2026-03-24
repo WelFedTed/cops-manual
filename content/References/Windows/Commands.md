@@ -83,7 +83,7 @@ tags:
 | `verifier`                                       | Opens `Driver Verifier Manager` app                              |                                                                                                   |
 | `videos`                                         | Opens current user's `Videos` folder                             |                                                                                                   |
 | `vlc`                                            | Opens `VLC Media Player` app _(if installed)_                    |                                                                                                   |
-| wfs                                              | Open `Windows Fax and Scan`                                      |                                                                                                   |
+| `wfs`                                            | Open `Windows Fax and Scan`                                      |                                                                                                   |
 | `winver`                                         | Opens `About Windows` window                                     | Quick way to check installed Windows edition _(Home/Pro/Enterprise)_, version, and build          |
 | `wt`                                             | Opens `Windows Terminal` app                                     |                                                                                                   |
 | `%APPDATA%`                                      | Opens current user's `AppData\Roaming` folder                    |                                                                                                   |
