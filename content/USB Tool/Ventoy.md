@@ -1,6 +1,6 @@
 ---
 title: Ventoy
-updated: 2025-09-07
+updated: 
 tags:
   - usb
   - tools
@@ -17,7 +17,7 @@ Though our USB Tool will rely on Ventoy, we don't install it directly, as the Me
 After you've got Medicat installed on your USB Tool, you can now update Ventoy on your USB Tool directly.\
 [How to update Ventoy](https://www.ventoy.net/en/doc_start.html)
 
-# Secure Bot
+# Secure Boot
 When booting in to your USB Tool on a device with Secure Boot enabled, you may need to enroll your device (Key or Hash) before you're able to boot from it.\
 [How to enroll Ventoy for Secure Boot](https://www.ventoy.net/en/doc_secure.html)
 
