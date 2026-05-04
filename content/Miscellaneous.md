@@ -289,3 +289,19 @@ goto :loop
 ```
 - Press `3` for `TSForge`
 - Press `2` for `Activate - ESU`
+
+# How to Mount Drives using Diskpart (Windows)
+Occassionally Windows won't automatically mount (or assign a drive letter) to drives you connect, and if your drive is Read-Only then you won't be able to assign a drive letter using Disk Management.\
+When this happens, use Diskpart to mount the drive / volume instead.
+- Open a terminal as Administrator\
+  `wt` or `powershell` or `cmd`
+- Run `diskpart`\
+  This will open the Diskpart CLI program
+  - List all volumes\
+    `list vol`
+  - Select target volume\
+    `select vol X`\
+    *(X = the listed number for the target volume)*
+  - Mount selected volume\
+    `assign letter=Z`\
+    *(Z = desired drive letter)*
