@@ -296,12 +296,12 @@ When this happens, use Diskpart to mount the drive / volume instead.
 - Open a terminal as Administrator\
   `wt` or `powershell` or `cmd`
 - Run `diskpart`\
-  This will open the Diskpart CLI program
+  *This will open the Diskpart CLI program*
   - List all volumes\
     `list vol`
   - Select target volume\
     `select vol X`\
-    *(X = the listed number for the target volume)*
+    *( X = the listed number for the target volume )*
   - Mount selected volume\
     `assign letter=Z`\
-    *(Z = desired drive letter)*
+    *( Z = desired drive letter )*
