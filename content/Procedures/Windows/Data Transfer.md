@@ -768,9 +768,29 @@ Create a Local Account during Windows 10/11 Out of Box Experience ( OOBE )
   *( skip `AppData` and `OneDrive` for now, and do <u>NOT</u> copy the `NTUser.dat` )*
 	- If there was data in the `OneDrive` folder on the old device and you can't sign back in to it on the new machine, then copy the contents of the `OneDrive` folder in to the User Profile directly
 
+## AppData
+Selectively copy across backed up AppData directories as required.\
+*(this is an efficient way to migrate Web Browser + Outlook profiles)*
+
+| Type        | Program             | AppData Location                               |
+| ----------- | :------------------ | :--------------------------------------------- |
+| Java Apps   | Java                | ..\AppData\LocalLow\Sun\Java                   |
+| Mail Client | eM Client           | ..\AppData\Roaming\eM Client                   |
+| Mail Client | Microsoft Outlook   | ..\AppData\Local\Microsoft\Outlook             |
+| Mail Client | Mozilla Thunderbird | ..\AppData\Roaming\Thunderbird                 |
+| Web Browser | AVG  Secure Browser | ..\AppData\Local\AVG Software\Browser          |
+| Web Browser | Brave               | ..\AppData\Local\BraveSoftware\Brave-Browser   |
+| Web Browser | Chromium            | ..\AppData\Local\Chromium                      |
+| Web Browser | Google Chrome       | ..\AppData\Local\Google\Chrome                 |
+| Web Browser | Microsoft Edge      | ..\AppData\Local\Microsoft\Edge                |
+| Web Browser | Mozilla Firefox     | ..\AppData\Roaming\Mozilla\Firefox             |
+| Web Browser | Opera Software      | ..\AppData\Roaming\Opera Software\Opera Stable |
+| Web Browser | Vivaldi             | ..\AppData\Local\Vivaldi                       |
+
+Note: Web Browser AppData does not include saved passwords, import these separately
 ## Programs
 - Log in to the new User account\
-  *( some programs are installed to the current user )*
+  *( some programs are installed to the cucdcd.rrent user )*
 - Import winget export from old device\
   `winget import winget.json`
 - Go through `winget_unavailable.txt` and manually install any missed programs as required\
