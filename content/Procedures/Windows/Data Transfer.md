@@ -336,6 +336,11 @@ Profile Location: `%APPDATA%\Roaming\Thunderbird`\
 [How to migrate eM Client profile to another PC](https://forum.emclient.com/t/transfer-em-from-one-pc-to-another/58064/9)
 
 ### Tools
+- Open `Nirsoft OutlookAccountsView` as Administrator
+	- Select all\
+	  `ctrl+a`
+	- Save as `Horizontal HTML` to `Data Transfer folder`\
+	  `ctrl+s`
 - Open `Nirsoft Mail PassView` as Administrator
 	- Select all\
 	  `ctrl+a`
