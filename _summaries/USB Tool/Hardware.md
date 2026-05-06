@@ -1,2 +1,0 @@
-# Recommended SSD Enclosure
-# Alternative

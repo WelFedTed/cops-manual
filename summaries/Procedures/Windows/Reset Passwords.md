@@ -1,3 +1,8 @@
+# COPS Manual
+## Procedures > Windows > Reset Passwords
+updated 2026-05-05
+</br>
+
 - [ ] Method 1: Tools
     - [ ] Medicat
     - [ ] PC Unlocker

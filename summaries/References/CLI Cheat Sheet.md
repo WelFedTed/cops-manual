@@ -1,3 +1,8 @@
+# COPS Manual
+## References > CLI Cheat Sheet
+updated 2026-05-05
+</br>
+
 - [ ] DISM
     - [ ] Repairs
         - [ ] Scan Windows For Corruption

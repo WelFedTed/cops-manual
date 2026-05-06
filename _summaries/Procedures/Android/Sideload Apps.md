@@ -1,3 +1,0 @@
-# Download
-# Upload
-# Install

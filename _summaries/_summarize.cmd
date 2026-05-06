@@ -1,1 +1,0 @@
-PowerShell.exe -ExecutionPolicy Bypass -File "_summarize.ps1"

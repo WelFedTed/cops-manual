@@ -8,26 +8,46 @@ output_dir="summaries"
 for file in "$input_dir"/**/*.md(.N); do
 
   rel_path="${file#$input_dir/}"
-  output="$output_dir/$rel_path"
 
-  mkdir -p "${output:h}"
+  md_output="$output_dir/$rel_path"
+  pdf_output="${md_output%.md}.pdf"
 
-  awk '
-    /^#+ / {
-      # count heading level
-      match($0, /^#+/)
-      level = RLENGTH
+  mkdir -p "${md_output:h}"
 
-      # remove leading # and space
-      sub(/^#+ /, "")
+  # Build title from path
+  base="${rel_path%.md}"
+  title="${base//\// > }"
 
-      # build indentation (4 spaces per level after top)
-      indent = ""
-      for (i = 1; i < level; i++) {
-        indent = indent "    "
+# Get last modified date
+ updated=$(stat -f "%Sm" -t "%Y-%m-%d" "$file")
+
+  # Generate Markdown checklist summary
+  {
+    print "# COPS Manual"
+    print "## $title"
+    print "updated $updated"
+    print "</br>"
+    print ""
+
+    awk '
+      /^#+ / {
+        match($0, /^#+/)
+        level = RLENGTH
+
+        sub(/^#+ /, "")
+
+        indent = ""
+        for (i = 1; i < level; i++) {
+          indent = indent "    "
+        }
+
+        print indent "- [ ] " $0
       }
+    ' "$file"
 
-      print indent "- [ ] " $0
-    }
-  ' "$file" > "$output" || :
+  } > "$md_output" || :
+
+  # Generate PDF from original markdown
+  pandoc "$md_output" -o "$pdf_output" --template eisvogel
+
 done

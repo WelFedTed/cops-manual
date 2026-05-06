@@ -1,4 +1,0 @@
-# Audio
-# Images
-# Prints
-# Videos

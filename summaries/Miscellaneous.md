@@ -1,3 +1,8 @@
+# COPS Manual
+## Miscellaneous
+updated 2026-05-05
+</br>
+
     - [ ] How to Hard Refresh Web Browsers
     - [ ] How to Manually Clear the Print Queue (Windows)
     - [ ] How to Generate Battery Report (Windows)
