@@ -1,5 +1,5 @@
-# Hardware
-# Networking
-# Security
-# Software
-# Scripting / Coding
+- [ ] Hardware
+- [ ] Networking
+- [ ] Security
+- [ ] Software
+- [ ] Scripting / Coding

@@ -1,2 +1,2 @@
-# Method 1: MIST
-# Method 2: Manual
+- [ ] Method 1: MIST
+- [ ] Method 2: Manual

@@ -1,2 +1,2 @@
-# Recommended SSD Enclosure
-# Alternative
+- [ ] Recommended SSD Enclosure
+- [ ] Alternative

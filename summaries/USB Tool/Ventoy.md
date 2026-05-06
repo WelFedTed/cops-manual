@@ -1,5 +1,5 @@
-# Install
-# Update
-# Secure Boot
-# Files
-# MBR vs GPT
+- [ ] Install
+- [ ] Update
+- [ ] Secure Boot
+- [ ] Files
+- [ ] MBR vs GPT

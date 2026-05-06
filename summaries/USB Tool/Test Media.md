@@ -1,4 +1,4 @@
-# Audio
-# Images
-# Prints
-# Videos
+- [ ] Audio
+- [ ] Images
+- [ ] Prints
+- [ ] Videos

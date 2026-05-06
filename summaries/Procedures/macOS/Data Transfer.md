@@ -1,2 +1,2 @@
-# Migration Assistant
-## Target Disk Mode
+- [ ] Migration Assistant
+    - [ ] Target Disk Mode
