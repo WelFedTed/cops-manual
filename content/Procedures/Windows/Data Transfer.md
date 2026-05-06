@@ -9,6 +9,7 @@ tags:
   - backup
   - restore
 ---
+[Download Checklist PDF](https://raw.githubusercontent.com/WelFedTed/cops-manual/refs/heads/main/summaries/Procedures/Windows/Data%20Transfer.pdf)
 # Backup
 
 ## Windows
