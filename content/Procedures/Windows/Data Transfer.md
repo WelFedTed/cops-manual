@@ -115,6 +115,8 @@ Use `rclone` to copy user data if available, as it is multi-threaded (faster) an
   `cd d:\Job#5000\Data-Transfer_2025-01-21\`
 - Copy `C:\Users` to `Data Transfer folder`\
   `rclone copy c:\users users --progress`
+> [!danger] Warning
+> `Rclone` doesn't invoke the OneDrive API, so you'll need to copy the OneDrive directory using `Windows Explorer`.
 ### Windows Explorer
 If `rclone` is unavailable, simply use Windows Explorer, just know it is single-threaded (slower) and does <u>not</u> verify copied files
 - Copy `C:\Users` to `Data Transfer folder` using `Windows Explorer`
