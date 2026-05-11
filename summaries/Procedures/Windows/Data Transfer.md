@@ -1,6 +1,6 @@
 # COPS Manual
 ## Procedures > Windows > Data Transfer
-updated 2026-05-06
+updated 2026-05-12
 </br>
 
 - [ ] Backup
@@ -37,6 +37,7 @@ updated 2026-05-06
     - [ ] Users
         - [ ] Tools
     - [ ] Office
+        - [ ] Recent Documents
     - [ ] Fonts
         - [ ] RClone
         - [ ] Windows Explorer
