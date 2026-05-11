@@ -421,7 +421,7 @@ Profile Location: `%APPDATA%\Roaming\Thunderbird`\
 > XJGKF-ALJDP-4VKE9-E99SD-ABCDE
 > ```
 ### Recent Documents
-Export the appropriate Registry keys for the installed Office version(s) to a folder named `recent-documents`.
+Export the appropriate Registry keys for the installed Office version(s) to a folder named `recent-documents`.\
 *naming convention:*\
 `office_2016+_word_user-mru.reg`
 
