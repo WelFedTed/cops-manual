@@ -480,6 +480,8 @@ Export the appropriate Registry keys for the installed Office version(s) to a fo
 | Windows Explorer | OpenSaveMRU      | `HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\OpenSaveMRU`    |
 | Windows Explorer | LastVisitedMRU   | `HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\LastVisitedMRU` |
 
+>[!tip] Note on Microsoft accounts and 365 apps
+> If the user is using installed Microsoft 365 apps logged in with their Microsoft Account or using Microsoft 365 apps via the web browser, then their MS account should also sync their recent documents lists
 ## Fonts
 ### RClone
 Use `rclone` to copy user data if available, as it is multi-threaded (faster) and verifies copied files
