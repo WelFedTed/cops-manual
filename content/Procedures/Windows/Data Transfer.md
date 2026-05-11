@@ -420,6 +420,66 @@ Profile Location: `%APPDATA%\Roaming\Thunderbird`\
 > 
 > XJGKF-ALJDP-4VKE9-E99SD-ABCDE
 > ```
+### Recent Documents
+Export the appropriate Registry keys for the installed Office version(s) to a folder named `recent-documents`.
+*naming convention:*\
+`office_2016+_word_user-mru.reg`
+
+- Open `regedit` as Administrator\
+  `regedit`
+- Navigate to the appropriate registry location (as per tables below)
+- Right Click on the current key/folder
+- Click `Export`
+
+|Office Version|Registry Version|
+|---|---|
+|Office 2000|9.0|
+|Office XP / 2002|10.0|
+|Office 2003|11.0|
+|Office 2007|12.0|
+|Office 2010|14.0|
+|Office 2013|15.0|
+|Office 2016 / 2019 / 2021 / 365|16.0|
+
+| Application      | Category         | Registry Location                                                                 |
+| ---------------- | ---------------- | --------------------------------------------------------------------------------- |
+| Word             | File MRU         | `HKCU\Software\Microsoft\Office\<VERSION>\Word\File MRU`                          |
+| Word             | Place MRU        | `HKCU\Software\Microsoft\Office\<VERSION>\Word\Place MRU`                         |
+| Word             | User MRU         | `HKCU\Software\Microsoft\Office\<VERSION>\Word\User MRU`                          |
+| Word             | Recent File List | `HKCU\Software\Microsoft\Office\<VERSION>\Word\Recent File List`                  |
+| Word             | Data             | `HKCU\Software\Microsoft\Office\<VERSION>\Word\Data`                              |
+| Excel            | File MRU         | `HKCU\Software\Microsoft\Office\<VERSION>\Excel\File MRU`                         |
+| Excel            | Place MRU        | `HKCU\Software\Microsoft\Office\<VERSION>\Excel\Place MRU`                        |
+| Excel            | User MRU         | `HKCU\Software\Microsoft\Office\<VERSION>\Excel\User MRU`                         |
+| Excel            | Recent Files     | `HKCU\Software\Microsoft\Office\<VERSION>\Excel\Recent Files`                     |
+| PowerPoint       | File MRU         | `HKCU\Software\Microsoft\Office\<VERSION>\PowerPoint\File MRU`                    |
+| PowerPoint       | Place MRU        | `HKCU\Software\Microsoft\Office\<VERSION>\PowerPoint\Place MRU`                   |
+| PowerPoint       | User MRU         | `HKCU\Software\Microsoft\Office\<VERSION>\PowerPoint\User MRU`                    |
+| PowerPoint       | Recent File List | `HKCU\Software\Microsoft\Office\<VERSION>\PowerPoint\Recent File List`            |
+| Access           | File MRU         | `HKCU\Software\Microsoft\Office\<VERSION>\Access\File MRU`                        |
+| Access           | Place MRU        | `HKCU\Software\Microsoft\Office\<VERSION>\Access\Place MRU`                       |
+| Access           | User MRU         | `HKCU\Software\Microsoft\Office\<VERSION>\Access\User MRU`                        |
+| Access           | Settings         | `HKCU\Software\Microsoft\Office\<VERSION>\Access\Settings`                        |
+| Outlook          | File MRU         | `HKCU\Software\Microsoft\Office\<VERSION>\Outlook\File MRU`                       |
+| Outlook          | Place MRU        | `HKCU\Software\Microsoft\Office\<VERSION>\Outlook\Place MRU`                      |
+| Outlook          | User MRU         | `HKCU\Software\Microsoft\Office\<VERSION>\Outlook\User MRU`                       |
+| Outlook          | Profiles         | `HKCU\Software\Microsoft\Office\<VERSION>\Outlook\Profiles`                       |
+| OneNote          | File MRU         | `HKCU\Software\Microsoft\Office\<VERSION>\OneNote\File MRU`                       |
+| OneNote          | Open Notebooks   | `HKCU\Software\Microsoft\Office\<VERSION>\OneNote\OpenNotebooks`                  |
+| OneNote          | Recent Notebooks | `HKCU\Software\Microsoft\Office\<VERSION>\OneNote\RecentNotebooks`                |
+| Publisher        | File MRU         | `HKCU\Software\Microsoft\Office\<VERSION>\Publisher\File MRU`                     |
+| Publisher        | Recent File List | `HKCU\Software\Microsoft\Office\<VERSION>\Publisher\Recent File List`             |
+| Visio            | File MRU         | `HKCU\Software\Microsoft\Office\<VERSION>\Visio\File MRU`                         |
+| Visio            | Application      | `HKCU\Software\Microsoft\Office\<VERSION>\Visio\Application`                      |
+| Project          | File MRU         | `HKCU\Software\Microsoft\Office\<VERSION>\MS Project\File MRU`                    |
+| Common           | Open Find        | `HKCU\Software\Microsoft\Office\<VERSION>\Common\Open Find`                       |
+| Common           | Internet         | `HKCU\Software\Microsoft\Office\<VERSION>\Common\Internet`                        |
+| Common           | Roaming          | `HKCU\Software\Microsoft\Office\<VERSION>\Common\Roaming`                         |
+| Common           | Identity         | `HKCU\Software\Microsoft\Office\<VERSION>\Common\Identity`                        |
+| Windows Explorer | RecentDocs       | `HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\RecentDocs`              |
+| Windows Explorer | OpenSaveMRU      | `HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\OpenSaveMRU`    |
+| Windows Explorer | LastVisitedMRU   | `HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\LastVisitedMRU` |
+
 ## Fonts
 ### RClone
 Use `rclone` to copy user data if available, as it is multi-threaded (faster) and verifies copied files
