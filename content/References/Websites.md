@@ -23,6 +23,7 @@ tags:
 | :------------------------------------------------------------------------------ | :-------------------------------------------------------------- |
 | [AirPrint](https://support.apple.com/en-us/HT201311)                            | List of Printers that support AirPrint                          |
 | [Apple Documentation](https://support.apple.com/en-us/docs)                     | Apple's Repair Manuals and Specifications for their devices     |
+| [Fix My Speakers](https://fixmyspeakers.com/)                                   | Plays a frequency through speakers to help eject water          |
 | [HardwareTester - Gamepad Tester](https://hardwaretester.com/gamepad)           | Test Gamepads / Controllers                                     |
 | [HardwareTester - Microphone Tester](https://hardwaretester.com/microphone)     | Test Microphones                                                |
 | [HardwareTester - Midi Tester](https://hardwaretester.com/midi)                 | Test MIDI input devices                                         |
