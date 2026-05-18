@@ -67,10 +67,15 @@ tags:
   - Open a Terminal as Administrator\
     Run `wt` or `powershell` or `cmd`
   - Run the following commands:
-    ```batch
+    ```batch    
+    winget install -e --id topgrade-rs.topgrade --silent --accept-source-agreements
+    Install-Module PSWindowsUpdate
+    Import-Module PSWindowsUpdate
+    $env:Path = [System.Environment]::GetEnvironmentVariable("Path", "Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path", "User")
+    topgrade --yes --no-ask-retry
     winget source reset --force
     winget source update
-    winget upgrade --all --silent
+    winget upgrade --all --silent --accept-source-agreements
     sfc /scannow
     dism /online /cleanup-image /startcomponentcleanup /resetbase
     dism /online /cleanup-image /restorehealth
