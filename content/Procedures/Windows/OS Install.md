@@ -49,3 +49,34 @@ tags:
 
 - **Unmount**
   - `Dismount-WindowsImage -Path C:\mount\ –Save`
+
+# Install Windows on an External Drive
+%% REF: https://vonmatterlorenzohorn.medium.com/heres-how-to-do-a-clean-install-of-windows-11-on-an-external-hard-disk-33ab06a9214f %%
+Use this method to install Windows directly on to offline drive from another computer running Windows.\
+(this could be used for other operating systems too)
+
+> [!info] Note on installing Windows via DISM
+> This can also be achieved with DISKPART + DISM, but it's more complicated with more room for error.\
+> This method using VM's should be simpler and more reliable.
+
+## Target Drive
+- Connect target drive\
+  *(could be physical or virtual disk)*
+- Ensure target drive is not mounted
+## Windows Installer
+- Have target Windows installer .iso ready\
+  *(download new installer if required*)
+## Hyper-V
+- Install `Hyper-V` if not installed already\
+  *(requires Windows Pro license or greater)*
+- Create new VM
+	- Use Windows installer .iso as install media
+	- Use Physical Hard Disk drive -> target drive
+- Boot up VM
+	- Install Windows like usual
+	- After the installer finishes copying and preparing the installer, you should see the 'Restarting in 10 seconds' screen.\
+	  Turn off the VM when you see this.
+## Migrate Drive
+- Safely unmount/eject your target drive.
+- The drive should now be ready to install into another device (or another VM) for use.\
+  *(this will be a stock Windows install that may be missing drivers for the target device's hardware, inject drivers as required)*
