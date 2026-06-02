@@ -307,7 +307,7 @@ When this happens, use Diskpart to mount the drive / volume instead.
     *( Z = desired drive letter )*
 
 # Secure Boot Recovery Utility
-*author nick@copscorp.com.au*
+contributor: nick@copscorp.com.au
 
 If you encounter a `Secure Boot Fail` error, you could try making a Secure Boot Recovery Utility.\
 \
