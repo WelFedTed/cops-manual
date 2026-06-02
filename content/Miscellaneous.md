@@ -305,3 +305,15 @@ When this happens, use Diskpart to mount the drive / volume instead.
   - Mount selected volume\
     `assign letter=Z`\
     *( Z = desired drive letter )*
+
+# Secure Boot Recovery Utility
+If you encounter a `Secure Boot Fail` error, you could try making a Secure Boot Recovery Utility.\
+\
+To recover the system:\
+On a second Windows PC with the July 2024 or newer Windows update installed, copy SecureBootRecovery.efi from C:\Windows\Boot\EFI\.\
+\
+Place the file on a FAT32-formatted USB drive under \EFI\BOOT\ and rename it to bootx64.efi.\
+\
+Boot the affected device from the USB drive and allow the recovery utility to run.\ The utility will add the Windows UEFI CA 2023 to the DB.\
+\
+There is a PowerShell command that can verify whether you have the 2023 certificates or not.
