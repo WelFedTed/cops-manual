@@ -317,3 +317,11 @@ Place the file on a FAT32-formatted USB drive under \EFI\BOOT\ and rename it to 
 Boot the affected device from the USB drive and allow the recovery utility to run.\ The utility will add the Windows UEFI CA 2023 to the DB.\
 \
 There is a PowerShell command that can verify whether you have the 2023 certificates or not.
+
+# Check if BIOS or UEFI from Windows
+- Open `System Information`\
+  Run: `msinfo32`
+	- Select `System Summary` in left window pane
+	  - Check `BIOS Mode` in right window pane\
+	    Legacy = BIOS\
+	    UEFI = UEFI
