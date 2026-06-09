@@ -46,6 +46,7 @@ tags:
 - Click `Advanced`
 - Click `Command Prompt`
 - Navigate to the System32 directory\
+  `c:`\
   `cd c:\windows\system32`\
   _Depending on the number logical volumes the computer has connected at the time, the volume that contains the Windows directory may be mounted to a different drive letter, but it's usually mounted as C:_
 > [!tip]- How to find the correct drive letter that contains the Windows directory
