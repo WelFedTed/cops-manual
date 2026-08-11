@@ -329,7 +329,7 @@ Export the appropriate Registry keys for the installed Outlook (classic) version
 [How to export Contacts in Windows Mail (People App)](https://support.microsoft.com/en-au/office/export-emails-and-contacts-from-windows-mail-or-people-and-import-to-new-outlook-7ced6135-3d1d-409b-b2da-4282a69c151b)
 
 ### Windows Live Mail
-[How to export Contacts in Windows Live Mail](https://oryon.net/knowledge-base/article/how-do-i-export-email-addresses-from-windows-live-mail/)
+[How to export Contacts in Windows Live Mail](https://oryon.net/knowledge-base/article/how-do-i-export-email-addresses-from-windows-live-mail/)\
 [How to export emails from Windows Live Mail to import in Outlook Classic](https://www.recoveryfix.com/blog/export-windows-live-mail-emails-to-outlook/)
 
 ### Mozilla Thunderbird
