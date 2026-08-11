@@ -330,7 +330,12 @@ Export the appropriate Registry keys for the installed Outlook (classic) version
 
 ### Windows Live Mail
 [How to export Contacts in Windows Live Mail](https://oryon.net/knowledge-base/article/how-do-i-export-email-addresses-from-windows-live-mail/)\
-[How to export emails from Windows Live Mail to import in Outlook Classic](https://www.recoveryfix.com/blog/export-windows-live-mail-emails-to-outlook/)
+[How to export emails from Windows Live Mail to import in Outlook (Classic)](https://www.recoveryfix.com/blog/export-windows-live-mail-emails-to-outlook/)\
+> [!tip]- Note on migrating from Windows Live Mail to Outlook (new)
+> If you need to migrate from `Windows Live Mail` using `POP` to `Outlook (new)` using `IMAP`, then you'll need to migrate to `Outlook (Classic)` using `IMAP` first to sync everything back to the server via IMAP, and then set up access to the email account in `Outlook (new)`.
+> 
+> You can use `Outlook (Classic)` on our workstations to achieve this.
+> Also, make sure to check the target mailbox has enough storage available before uploading content back to it, as new emails will get bounced back / rejected if the mailbox is full.
 
 ### Mozilla Thunderbird
 Profile Location: `%APPDATA%\Roaming\Thunderbird`\
