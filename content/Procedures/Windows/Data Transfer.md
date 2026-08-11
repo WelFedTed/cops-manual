@@ -330,6 +330,7 @@ Export the appropriate Registry keys for the installed Outlook (classic) version
 
 ### Windows Live Mail
 [How to export Contacts in Windows Live Mail](https://oryon.net/knowledge-base/article/how-do-i-export-email-addresses-from-windows-live-mail/)
+[How to export emails from Windows Live Mail to import in Outlook Classic](https://www.recoveryfix.com/blog/export-windows-live-mail-emails-to-outlook/)
 
 ### Mozilla Thunderbird
 Profile Location: `%APPDATA%\Roaming\Thunderbird`\
