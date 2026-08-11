@@ -331,7 +331,8 @@ Export the appropriate Registry keys for the installed Outlook (classic) version
 ### Windows Live Mail
 [How to export Contacts in Windows Live Mail](https://oryon.net/knowledge-base/article/how-do-i-export-email-addresses-from-windows-live-mail/)\
 [How to export emails from Windows Live Mail to import in Outlook (Classic)](https://www.recoveryfix.com/blog/export-windows-live-mail-emails-to-outlook/)\
-*(may have to break export up in to multiple smaller exports to avoid export breaking)*
+*(may have to break export up in to multiple smaller exports to avoid export breaking)*\
+Alternatively I think you can import from `Windows Live Mail` directly in to an `Outlook (Classic)` client on the same machine, I think you invoke this via exporting in `Windows Live Mail` then `Outlook (Classic)` pops up on its own, may require Outlook 2007?
 > [!tip]- Note on migrating from Windows Live Mail to Outlook (new)
 > If you need to migrate from `Windows Live Mail` using `POP` to `Outlook (new)` using `IMAP`, then you'll need to migrate to `Outlook (Classic)` using `IMAP` first to sync everything back to the server via IMAP, and then set up access to the email account in `Outlook (new)`.
 > 
